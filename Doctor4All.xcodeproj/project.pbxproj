@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */; };
-		8AD1C8B91E66B31C00D34CCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1C8B81E66B31C00D34CCE /* ViewController.swift */; };
 		8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */; };
 		8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */; };
 		8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */; };
-		8AD1C8C91E66B6DA00D34CCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8C81E66B6DA00D34CCE /* GoogleService-Info.plist */; };
+		A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AA1E66DABB0012270F /* SignUpController.swift */; };
+		A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AC1E66DAD40012270F /* LogInController.swift */; };
+		A111F1B41E66E2B50012270F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A111F1B31E66E2B50012270F /* Home.storyboard */; };
+		A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1B51E66E2CB0012270F /* HomeViewController.swift */; };
+		A111F1B91E66E2FB0012270F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1B71E66E2FB0012270F /* TableViewCell.swift */; };
+		A111F1BA1E66E2FB0012270F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A111F1B81E66E2FB0012270F /* TableViewCell.xib */; };
+		A111F1BF1E66E3FA0012270F /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A111F1BE1E66E3FA0012270F /* Request.storyboard */; };
+		A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C01E66E45E0012270F /* MapViewController.swift */; };
+		A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C21E66E4790012270F /* DescriptionViewController.swift */; };
+		A111F1C51E66E7A40012270F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C41E66E7A40012270F /* ViewController.swift */; };
 		CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +28,20 @@
 		05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.debug.xcconfig"; sourceTree = "<group>"; };
 		8AD1C8B31E66B31900D34CCE /* Doctor4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8AD1C8B81E66B31C00D34CCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AD1C8BB1E66B31F00D34CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AD1C8C01E66B31F00D34CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AD1C8C21E66B32000D34CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AD1C8C81E66B6DA00D34CCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A111F1AA1E66DABB0012270F /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		A111F1AC1E66DAD40012270F /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		A111F1B31E66E2B50012270F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		A111F1B51E66E2CB0012270F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A111F1B71E66E2FB0012270F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A111F1B81E66E2FB0012270F /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		A111F1BE1E66E3FA0012270F /* Request.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
+		A111F1C01E66E45E0012270F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A111F1C21E66E4790012270F /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		A111F1C41E66E7A40012270F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor4All.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,13 +87,10 @@
 		8AD1C8B51E66B31900D34CCE /* Doctor4All */ = {
 			isa = PBXGroup;
 			children = (
-				8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */,
-				8AD1C8B81E66B31C00D34CCE /* ViewController.swift */,
-				8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */,
-				8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */,
-				8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */,
-				8AD1C8C21E66B32000D34CCE /* Info.plist */,
-				8AD1C8C81E66B6DA00D34CCE /* GoogleService-Info.plist */,
+				A111F1BC1E66E3630012270F /* Supports */,
+				A111F1AE1E66DE6B0012270F /* Authentication */,
+				A111F1BB1E66E32F0012270F /* Home */,
+				A111F1BD1E66E3B90012270F /* Request */,
 			);
 			path = Doctor4All;
 			sourceTree = "<group>";
@@ -89,6 +102,49 @@
 				C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A111F1AE1E66DE6B0012270F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */,
+				A111F1C41E66E7A40012270F /* ViewController.swift */,
+				A111F1AA1E66DABB0012270F /* SignUpController.swift */,
+				A111F1AC1E66DAD40012270F /* LogInController.swift */,
+				8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		A111F1BB1E66E32F0012270F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A111F1B31E66E2B50012270F /* Home.storyboard */,
+				A111F1B51E66E2CB0012270F /* HomeViewController.swift */,
+				A111F1B71E66E2FB0012270F /* TableViewCell.swift */,
+				A111F1B81E66E2FB0012270F /* TableViewCell.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		A111F1BC1E66E3630012270F /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */,
+				8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */,
+				8AD1C8C21E66B32000D34CCE /* Info.plist */,
+			);
+			name = Supports;
+			sourceTree = "<group>";
+		};
+		A111F1BD1E66E3B90012270F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A111F1BE1E66E3FA0012270F /* Request.storyboard */,
+				A111F1C01E66E45E0012270F /* MapViewController.swift */,
+				A111F1C21E66E4790012270F /* DescriptionViewController.swift */,
+			);
+			name = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */,
-				8AD1C8C91E66B6DA00D34CCE /* GoogleService-Info.plist in Resources */,
+				A111F1BF1E66E3FA0012270F /* Request.storyboard in Resources */,
+				A111F1BA1E66E2FB0012270F /* TableViewCell.xib in Resources */,
+				A111F1B41E66E2B50012270F /* Home.storyboard in Resources */,
 				8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */,
 				8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */,
 			);
@@ -216,8 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AD1C8B91E66B31C00D34CCE /* ViewController.swift in Sources */,
+				A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */,
+				A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */,
+				A111F1B91E66E2FB0012270F /* TableViewCell.swift in Sources */,
+				A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */,
+				A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */,
 				8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */,
+				A111F1C51E66E7A40012270F /* ViewController.swift in Sources */,
+				A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +445,7 @@
 				8AD1C8C71E66B32000D34CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
