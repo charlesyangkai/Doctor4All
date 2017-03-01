@@ -11,6 +11,7 @@
 		8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */; };
 		8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */; };
 		8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */; };
+		8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */; };
 		A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AA1E66DABB0012270F /* SignUpController.swift */; };
 		A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AC1E66DAD40012270F /* LogInController.swift */; };
 		A111F1B41E66E2B50012270F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A111F1B31E66E2B50012270F /* Home.storyboard */; };
@@ -32,6 +33,7 @@
 		8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AD1C8C01E66B31F00D34CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AD1C8C21E66B32000D34CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A111F1AA1E66DABB0012270F /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		A111F1AC1E66DAD40012270F /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		A111F1B31E66E2B50012270F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */,
 				8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */,
+				8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */,
 				8AD1C8C21E66B32000D34CCE /* Info.plist */,
 			);
 			name = Supports;
@@ -216,6 +219,7 @@
 				A111F1B41E66E2B50012270F /* Home.storyboard in Resources */,
 				8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */,
 				8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */,
+				8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
