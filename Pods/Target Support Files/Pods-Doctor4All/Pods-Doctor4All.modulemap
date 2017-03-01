@@ -1,0 +1,6 @@
+framework module Pods_Doctor4All {
+  umbrella header "Pods-Doctor4All-umbrella.h"
+
+  export *
+  module * { export * }
+}

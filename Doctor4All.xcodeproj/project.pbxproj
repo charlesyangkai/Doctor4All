@@ -12,9 +12,12 @@
 		8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */; };
 		8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */; };
 		8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */; };
+		8AD1C8C91E66B6DA00D34CCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8C81E66B6DA00D34CCE /* GoogleService-Info.plist */; };
+		CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.debug.xcconfig"; sourceTree = "<group>"; };
 		8AD1C8B31E66B31900D34CCE /* Doctor4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD1C8B81E66B31C00D34CCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AD1C8C01E66B31F00D34CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AD1C8C21E66B32000D34CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AD1C8C81E66B6DA00D34CCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor4All.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484A76D608F0C379E0F658CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8AD1C8AA1E66B31000D34CCE = {
 			isa = PBXGroup;
 			children = (
 				8AD1C8B51E66B31900D34CCE /* Doctor4All */,
 				8AD1C8B41E66B31900D34CCE /* Products */,
+				9AFDDABDCC5CB348E776A3A8 /* Pods */,
+				484A76D608F0C379E0F658CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +77,18 @@
 				8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */,
 				8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */,
 				8AD1C8C21E66B32000D34CCE /* Info.plist */,
+				8AD1C8C81E66B6DA00D34CCE /* GoogleService-Info.plist */,
 			);
 			path = Doctor4All;
+			sourceTree = "<group>";
+		};
+		9AFDDABDCC5CB348E776A3A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */,
+				C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AD1C8C51E66B32000D34CCE /* Build configuration list for PBXNativeTarget "Doctor4All" */;
 			buildPhases = (
+				5FDBDB32DDD0CC16DA7CB2E8 /* [CP] Check Pods Manifest.lock */,
 				8AD1C8AF1E66B31200D34CCE /* Sources */,
 				8AD1C8B01E66B31200D34CCE /* Frameworks */,
 				8AD1C8B11E66B31200D34CCE /* Resources */,
+				888E38CC63624460DEF27A29 /* [CP] Embed Pods Frameworks */,
+				10183BA22F19829B5F3014FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,12 +155,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */,
+				8AD1C8C91E66B6DA00D34CCE /* GoogleService-Info.plist in Resources */,
 				8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */,
 				8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10183BA22F19829B5F3014FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FDBDB32DDD0CC16DA7CB2E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		888E38CC63624460DEF27A29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AD1C8AF1E66B31200D34CCE /* Sources */ = {
@@ -257,6 +336,7 @@
 		};
 		8AD1C8C61E66B32000D34CCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H743MSM342;
@@ -270,6 +350,7 @@
 		};
 		8AD1C8C71E66B32000D34CCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H743MSM342;
