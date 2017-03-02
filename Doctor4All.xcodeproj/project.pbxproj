@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A23CD531E67CB0E00F8C60C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A23CD521E67CB0E00F8C60C /* MapKit.framework */; };
 		8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */; };
 		8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */; };
 		8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */; };
 		8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BF1E66B31F00D34CCE /* LaunchScreen.storyboard */; };
+		8ADD723B1E67CB6D00DCADB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */; };
+		8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD723C1E681CF900DCADB9 /* Doctor.swift */; };
 		8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */; };
 		A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AA1E66DABB0012270F /* SignUpController.swift */; };
 		A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AC1E66DAD40012270F /* LogInController.swift */; };
@@ -27,12 +30,15 @@
 
 /* Begin PBXFileReference section */
 		05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.debug.xcconfig"; sourceTree = "<group>"; };
+		8A23CD521E67CB0E00F8C60C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8AD1C8B31E66B31900D34CCE /* Doctor4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD1C8BB1E66B31F00D34CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AD1C8BD1E66B31F00D34CCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AD1C8C01E66B31F00D34CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AD1C8C21E66B32000D34CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8ADD723C1E681CF900DCADB9 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A111F1AA1E66DABB0012270F /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		A111F1AC1E66DAD40012270F /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
@@ -53,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ADD723B1E67CB6D00DCADB9 /* CoreLocation.framework in Frameworks */,
+				8A23CD531E67CB0E00F8C60C /* MapKit.framework in Frameworks */,
 				CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +71,8 @@
 		484A76D608F0C379E0F658CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */,
+				8A23CD521E67CB0E00F8C60C /* MapKit.framework */,
 				A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */,
 			);
 			name = Frameworks;
@@ -143,9 +153,10 @@
 		A111F1BD1E66E3B90012270F /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				A111F1BE1E66E3FA0012270F /* Request.storyboard */,
 				A111F1C01E66E45E0012270F /* MapViewController.swift */,
 				A111F1C21E66E4790012270F /* DescriptionViewController.swift */,
+				8ADD723C1E681CF900DCADB9 /* Doctor.swift */,
+				A111F1BE1E66E3FA0012270F /* Request.storyboard */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -283,6 +294,7 @@
 				A111F1B91E66E2FB0012270F /* TableViewCell.swift in Sources */,
 				A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */,
 				A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */,
+				8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */,
 				8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */,
 				A111F1C51E66E7A40012270F /* ViewController.swift in Sources */,
 				A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */,
