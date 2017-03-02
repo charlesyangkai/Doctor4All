@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FIRApp.configure()
+        //FIRApp.configure()
+        displayDoctors()
         return true
     }
 
@@ -46,3 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    func displayDoctors(){
+        let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
+        //as? LoginViewController
+        window?.rootViewController = controller
+}
+}
