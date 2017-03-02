@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         
-        displayRequest()
-        
+        //displayRequest()
+        displayDoctors()
         return true
     }
 
@@ -56,5 +56,12 @@ extension AppDelegate {
         as? MapViewController
         window?.rootViewController = controller
     }
-}
 
+    
+    func displayDoctors(){
+        let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
+        //as? LoginViewController
+        window?.rootViewController = controller
+}
+}
