@@ -197,6 +197,7 @@
 					8AD1C8B21E66B31200D34CCE = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = H743MSM342;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -419,11 +420,14 @@
 			baseConfigurationReference = 05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = H743MSM342;
 				INFOPLIST_FILE = Doctor4All/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlesyangkai.Doctor4All;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Doctor4All/Doctor4All-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -433,11 +437,13 @@
 			baseConfigurationReference = C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = H743MSM342;
 				INFOPLIST_FILE = Doctor4All/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlesyangkai.Doctor4All;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Doctor4All/Doctor4All-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
