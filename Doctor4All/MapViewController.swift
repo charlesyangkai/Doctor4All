@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseDatabase
 
 class MapViewController: UIViewController {
     
@@ -17,11 +18,17 @@ class MapViewController: UIViewController {
     var selectedClinics = MKPointAnnotation()
     var resultSearchController: UISearchController? = nil
     var indexPathRow: Int!
+    var types: [String] = ["generalPractioners", "psychologists", "therapists"]
+    var doctorID: [String] = []
+    var dbRef: FIRDatabaseReference!
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dbRef = FIRDatabase.database().reference()
         
         mapView.delegate = self
         locationManager.delegate = self
@@ -31,6 +38,8 @@ class MapViewController: UIViewController {
         
         // Create MakeAnAppointment Button Programatically
         createButton()
+        observeDoctors()
+        observeAddresses()
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,9 +52,10 @@ class MapViewController: UIViewController {
         // Remove the constraint for subview
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Make An Appointment", for: .normal)
-        button.setTitleColor(UIColor.magenta , for: .normal)
-        button.backgroundColor = UIColor.clear
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        button.setTitleColor(UIColor.white , for: .normal)
+        button.backgroundColor = UIColor.purple
+        //button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.titleLabel?.font = UIFont.init(name: "HelveticaNeue", size: 25)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         view.addSubview(button)
@@ -61,6 +71,39 @@ class MapViewController: UIViewController {
     func buttonPressed(){
         print("You're cute.")
     }
+    
+    func displayingDoctorOfSelectedType(){
+     
+        
+        
+    }
+    
+    
+    func observeDoctors(){
+     
+        guard let type = types[indexPathRow] else {return}
+        
+        dbRef.child("types").child(type).observe(.value, with: { (snapshot) in
+            if let snapValues = snapshot.key as? [String]{
+                    self.doctorID?.append(snapValues)
+                }
+        })
+    }
+    
+    func observeAddresses(){
+        
+        for id in doctorID{
+            
+            dbRef.child("doctors").child(id).observe(.value, with: { (snapshot) in
+                if let snapValues = snapshot.key as? [String]{
+                    self.doctorID?.append(snapValues)
+                }
+            })
+
+        }
+    }
+    
+    
     
   /*
     func whenStationIsSelected(){

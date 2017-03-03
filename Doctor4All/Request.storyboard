@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBU-I5-nwe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="523"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,13 +33,14 @@
                             <constraint firstItem="bBU-I5-nwe" firstAttribute="top" secondItem="pWh-aa-uQa" secondAttribute="bottom" id="lHh-hl-WfO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x1d-Ky-I3z"/>
                     <connections>
                         <outlet property="mapView" destination="bBU-I5-nwe" id="rvs-Vb-ioF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTk-Az-dN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="-59"/>
+            <point key="canvasLocation" x="820" y="-59.820089955022496"/>
         </scene>
     </scenes>
 </document>
