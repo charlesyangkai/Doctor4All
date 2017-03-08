@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         
-        displayRequest()
-        //displayDoctors()
+        //displayRequest()
+        displayDoctors()
+        //displayAppointment()
+        
         return true
     }
     
@@ -62,6 +64,13 @@ extension AppDelegate {
         let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
         as? UINavigationController
+        window?.rootViewController = controller
+    }
+    
+    func displayAppointment(){
+        let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "AppointmentViewController")
+            as? AppointmentViewController
         window?.rootViewController = controller
     }
 }
