@@ -12,8 +12,10 @@ class Doctor {
     
     var name: String?
     var type: String? //dropdown
-    var age: Int?
+    var age: String?
     var address: String?
+    //var latitude: Double?
+    //var longitude: Double?
     var picture: URL?
     var certPicture: URL?
     var icPicture: URL?
@@ -28,16 +30,27 @@ class Doctor {
         
         name = dictionary["name"] as? String
         type = dictionary["type"] as? String
-        age = dictionary["age"] as? Int
+        age = dictionary["age"] as? String
         address = dictionary["address"] as? String
-        //picture = dictionary["picture"] as? String
-        //certPicture = dictionary["certPicture"] as? String
-        //icPicture = dictionary["icPicture"] as? String
+        //latitude = dictionary["latitude"] as? Double
+        //longitude = dictionary["longitude"] as? Double
         gender = dictionary["gender"] as? String
         verified = dictionary["verified"] as? String
         contactNumber = dictionary["contactNumber"] as? String
         email = dictionary["email"] as? String
         clinicName = dictionary["clinicName"] as? String
+        
+        if let pictureURL = dictionary["picture"] as? String{
+            picture = URL(string: pictureURL)
+        }
+        
+        if let certPictureURL = dictionary["certPicture"] as? String{
+            certPicture = URL(string: certPictureURL)
+        }
+        
+        if let icPictureURL = dictionary["icPicture"] as? String{
+            icPicture = URL(string: icPictureURL)
+        }
         
         
     }

@@ -17,7 +17,8 @@ class MapViewController: UIViewController {
     var currentLocation = MKPointAnnotation()
     var selectedClinics = MKPointAnnotation()
     var resultSearchController: UISearchController? = nil
-    var indexPathRow: Int!
+    var doctors: [Doctor] = []
+    var indexPathRow: Int?
     var types: [String] = ["generalPractioners", "psychologists", "therapists"]
     var doctorID: [String] = []
     var dbRef: FIRDatabaseReference!
@@ -38,8 +39,9 @@ class MapViewController: UIViewController {
         
         // Create MakeAnAppointment Button Programatically
         createButton()
-        observeDoctors()
-        observeAddresses()
+        observeDoctorsID()
+        //observeDoctors()
+        //addressToCoordinatesConverter()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,65 +72,123 @@ class MapViewController: UIViewController {
     
     func buttonPressed(){
         print("You're cute.")
-    }
-    
-    func displayingDoctorOfSelectedType(){
-     
-        
+        let storyboardd = UIStoryboard(name: "Request", bundle: Bundle.main)
+        let appointmentViewController = storyboardd.instantiateViewController(withIdentifier: "AppointmentViewController") as? AppointmentViewController
+        self.navigationController?.pushViewController(appointmentViewController!, animated: true)
         
     }
     
     
-    func observeDoctors(){
-     
-        guard let type = types[indexPathRow] else {return}
+    
+    func observeDoctorsID(){
         
+        guard let index = indexPathRow else {return}
+        
+        print("index is \(index)")
+        
+        if index > types.count {
+            return
+        }
+        
+        let type = types[index]
+        
+        print("type is \(type)")
+
         dbRef.child("types").child(type).observe(.value, with: { (snapshot) in
-            if let snapValues = snapshot.key as? [String]{
-                    self.doctorID?.append(snapValues)
+            dump(snapshot)
+            
+            if let snapValues = snapshot.value as? [String: String] {
+                
+                for (_,value) in snapValues {
+                    self.doctorID.append(value)
                 }
+            }
+            
+            print(self.doctorID)
+            self.observeDoctors()
+            
         })
     }
     
-    func observeAddresses(){
-        
-        for id in doctorID{
-            
-            dbRef.child("doctors").child(id).observe(.value, with: { (snapshot) in
-                if let snapValues = snapshot.key as? [String]{
-                    self.doctorID?.append(snapValues)
-                }
-            })
+        func observeDoctors(){
+    
+            for id in doctorID{
+    
+                dbRef.child("doctors").child(id).observe(.value, with: { (snapshot) in
+                    
+                    dump(snapshot)
+                    if let snapValues = snapshot.value as? [String: Any]{
+                        
+                        let newDoctor = Doctor(withDictionary: snapValues)
+                        self.doctors.append(newDoctor)
+                    }
+                    
+                    print(self.doctors)
+                    
+                    self.addressToCoordinatesConverter()
+                })
+            }
+        }
+    
 
+    
+    
+    func addressToCoordinatesConverter() {
+        
+        print(doctors)
+        
+        var address: String = ""
+        
+        for doctor in doctors{
+            address = doctor.address!
+            
+            let geoCoder = CLGeocoder()
+            
+            geoCoder.geocodeAddressString(address) { (placemarks, error) in
+                if error == nil,
+                    let placemarks = placemarks {
+                    if placemarks.count != 0 {
+                        for placemark in placemarks {
+                        //if let placemark = placemarks.first {
+                            let annotation = MKPointAnnotation()
+                            annotation.coordinate = (placemark.location?.coordinate)!
+                            //self.mapView.showAnnotations([annotation], animated: true)
+                            //self.mapView.selectedAnnotations(annotation, animated: true)
+                            self.mapView.addAnnotation(annotation)
+                        }
+                    }
+                }
+            }
         }
     }
+
     
     
     
-  /*
-    func whenStationIsSelected(){
+    /*
+     func whenStationIsSelected(){
      
      loop here for all selected clinics
-        
-        let latitude = BikeStation.allBikeStations[indexPathRow].latitude
-        let longitude = BikeStation.allBikeStations[indexPathRow].longitude
-        print(latitude, longitude)
-        
-        // Setting selected station's coordinates
-        selectedStation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        selectedStation.title = BikeStation.allBikeStations[indexPathRow].stationName
-        selectedStation.subtitle = String(BikeStation.allBikeStations[indexPathRow].availableBikes)
-        mapView.addAnnotation(selectedStation)
-        mapView.delegate = self
-        
-        let pin = MKPinAnnotationView()
-        pin.canShowCallout = true
-        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        
-    }
-*/
-
-
+     
+     let latitude = BikeStation.allBikeStations[indexPathRow].latitude
+     let longitude = BikeStation.allBikeStations[indexPathRow].longitude
+     print(latitude, longitude)
+     
+     // Setting selected station's coordinates
+     selectedStation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+     selectedStation.title = BikeStation.allBikeStations[indexPathRow].stationName
+     selectedStation.subtitle = String(BikeStation.allBikeStations[indexPathRow].availableBikes)
+     mapView.addAnnotation(selectedStation)
+     mapView.delegate = self
+     
+     let pin = MKPinAnnotationView()
+     pin.canShowCallout = true
+     pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+     
+     }
+     */
+    
+    
 }
 
 extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{

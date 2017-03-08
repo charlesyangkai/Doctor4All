@@ -10,15 +10,21 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
 
-    var tableDoctors: [String] = ["General Practitioner","Therapist","Psychologist"]
+    var tableDoctors: [String] = ["General Practitioner","Therapist","Psychologist","Nurse"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        btnMenu.target = self.revealViewController()
+        btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         
         tableView.delegate = self
         tableView.dataSource = self
         
+       
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
     }
@@ -44,7 +50,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let storyboardd = UIStoryboard(name: "Request", bundle: Bundle.main)
         let mapViewController = storyboardd.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationController?.pushViewController(mapViewController!, animated: true)
-//        mapViewController?.indexPathRow = indexPath.row
+        mapViewController?.indexPathRow = indexPath.row
 //        print(mapViewController?.indexPathRow)
     }
     
