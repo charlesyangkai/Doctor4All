@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //displayDoctorspage()
         //displayRequest()
         displayDoctors()
+        //displayAppointment()
+        
         return true
     }
     
@@ -70,6 +72,13 @@ extension AppDelegate {
 //        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
        // as? UINavigationController
         let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        window?.rootViewController = controller
+    }
+    
+    func displayAppointment(){
+        let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "AppointmentViewController")
+            as? AppointmentViewController
         window?.rootViewController = controller
     }
 }

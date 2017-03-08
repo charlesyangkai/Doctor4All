@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let storyboardd = UIStoryboard(name: "Request", bundle: Bundle.main)
         let mapViewController = storyboardd.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationController?.pushViewController(mapViewController!, animated: true)
-//        mapViewController?.indexPathRow = indexPath.row
+        mapViewController?.indexPathRow = indexPath.row
 //        print(mapViewController?.indexPathRow)
     }
     
