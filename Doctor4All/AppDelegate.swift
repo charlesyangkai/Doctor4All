@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-        
-        displayRequest()
-        //displayDoctors()
+        //displayDoctorspage()
+        //displayRequest()
+        displayDoctors()
         return true
     }
     
@@ -50,6 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    
+    func displayDoctorspage(){
+        let storyboard = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        window?.rootViewController = controller
+    }
+    
     func displayRequest(){
         let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(withIdentifier: "MapViewController")
@@ -60,8 +67,9 @@ extension AppDelegate {
     
     func displayDoctors(){
         let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
-        as? UINavigationController
+//        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
+       // as? UINavigationController
+        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
         window?.rootViewController = controller
     }
 }

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4936CC071E6FBE1E0001C2B1 /* TableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936CC051E6FBE1E0001C2B1 /* TableViewCell2.swift */; };
+		4936CC081E6FBE1E0001C2B1 /* TableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4936CC061E6FBE1E0001C2B1 /* TableViewCell2.xib */; };
+		4936CC0A1E6FCD3F0001C2B1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936CC091E6FCD3F0001C2B1 /* EventDetailsViewController.swift */; };
+		495F58761E69576100709A39 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F58751E69576100709A39 /* SWRevealViewController.m */; };
+		495F589A1E69794100709A39 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F58991E69794100709A39 /* MenuViewController.swift */; };
+		495F58A01E697B6700709A39 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F589F1E697B6700709A39 /* MenuCell.swift */; };
+		49C193151E6E932600D3B0F6 /* DoctorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */; };
+		49C193171E6E935500D3B0F6 /* DoctorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C193161E6E935500D3B0F6 /* DoctorHome.storyboard */; };
+		49C1931C1E6EAD9200D3B0F6 /* Menu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C1931B1E6EAD9200D3B0F6 /* Menu2ViewController.swift */; };
 		8A23CD531E67CB0E00F8C60C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A23CD521E67CB0E00F8C60C /* MapKit.framework */; };
 		8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */; };
 		8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */; };
@@ -30,6 +39,17 @@
 
 /* Begin PBXFileReference section */
 		05DE214A62E45574626B1C26 /* Pods-Doctor4All.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.debug.xcconfig"; sourceTree = "<group>"; };
+		4936CC051E6FBE1E0001C2B1 /* TableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell2.swift; sourceTree = "<group>"; };
+		4936CC061E6FBE1E0001C2B1 /* TableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell2.xib; sourceTree = "<group>"; };
+		4936CC091E6FCD3F0001C2B1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		495F58731E69576000709A39 /* Doctor4All-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor4All-Bridging-Header.h"; sourceTree = "<group>"; };
+		495F58741E69576100709A39 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Downloads/lift-side-memu-in-swift-3-master 2/memuDemo/SWRevealViewController.h"; sourceTree = "<group>"; };
+		495F58751E69576100709A39 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Downloads/lift-side-memu-in-swift-3-master 2/memuDemo/SWRevealViewController.m"; sourceTree = "<group>"; };
+		495F58991E69794100709A39 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		495F589F1E697B6700709A39 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorHomeViewController.swift; sourceTree = "<group>"; };
+		49C193161E6E935500D3B0F6 /* DoctorHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DoctorHome.storyboard; sourceTree = "<group>"; };
+		49C1931B1E6EAD9200D3B0F6 /* Menu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu2ViewController.swift; sourceTree = "<group>"; };
 		8A23CD521E67CB0E00F8C60C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8AD1C8B31E66B31900D34CCE /* Doctor4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD1C8B61E66B31B00D34CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +96,19 @@
 				A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49C193131E6E928900D3B0F6 /* DoctorHome */ = {
+			isa = PBXGroup;
+			children = (
+				49C193161E6E935500D3B0F6 /* DoctorHome.storyboard */,
+				49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */,
+				4936CC091E6FCD3F0001C2B1 /* EventDetailsViewController.swift */,
+				4936CC051E6FBE1E0001C2B1 /* TableViewCell2.swift */,
+				4936CC061E6FBE1E0001C2B1 /* TableViewCell2.xib */,
+				49C1931B1E6EAD9200D3B0F6 /* Menu2ViewController.swift */,
+			);
+			name = DoctorHome;
 			sourceTree = "<group>";
 		};
 		8AD1C8AA1E66B31000D34CCE = {
@@ -133,8 +166,14 @@
 			children = (
 				A111F1B31E66E2B50012270F /* Home.storyboard */,
 				A111F1B51E66E2CB0012270F /* HomeViewController.swift */,
+				495F58991E69794100709A39 /* MenuViewController.swift */,
+				495F589F1E697B6700709A39 /* MenuCell.swift */,
 				A111F1B71E66E2FB0012270F /* TableViewCell.swift */,
 				A111F1B81E66E2FB0012270F /* TableViewCell.xib */,
+				495F58741E69576100709A39 /* SWRevealViewController.h */,
+				495F58751E69576100709A39 /* SWRevealViewController.m */,
+				495F58731E69576000709A39 /* Doctor4All-Bridging-Header.h */,
+				49C193131E6E928900D3B0F6 /* DoctorHome */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -225,9 +264,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C193171E6E935500D3B0F6 /* DoctorHome.storyboard in Resources */,
 				8AD1C8C11E66B31F00D34CCE /* LaunchScreen.storyboard in Resources */,
 				A111F1BF1E66E3FA0012270F /* Request.storyboard in Resources */,
 				A111F1BA1E66E2FB0012270F /* TableViewCell.xib in Resources */,
+				4936CC081E6FBE1E0001C2B1 /* TableViewCell2.xib in Resources */,
 				A111F1B41E66E2B50012270F /* Home.storyboard in Resources */,
 				8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */,
 				8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */,
@@ -290,13 +331,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4936CC071E6FBE1E0001C2B1 /* TableViewCell2.swift in Sources */,
 				A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */,
 				A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */,
+				495F58A01E697B6700709A39 /* MenuCell.swift in Sources */,
+				4936CC0A1E6FCD3F0001C2B1 /* EventDetailsViewController.swift in Sources */,
 				A111F1B91E66E2FB0012270F /* TableViewCell.swift in Sources */,
+				49C193151E6E932600D3B0F6 /* DoctorHomeViewController.swift in Sources */,
 				A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */,
+				495F589A1E69794100709A39 /* MenuViewController.swift in Sources */,
 				A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */,
+				49C1931C1E6EAD9200D3B0F6 /* Menu2ViewController.swift in Sources */,
 				8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */,
 				8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */,
+				495F58761E69576100709A39 /* SWRevealViewController.m in Sources */,
 				A111F1C51E66E7A40012270F /* ViewController.swift in Sources */,
 				A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */,
 			);
@@ -426,7 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlesyangkai.Doctor4All;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Doctor4All/Doctor4All-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -443,7 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlesyangkai.Doctor4All;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Doctor4All/Doctor4All-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

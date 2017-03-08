@@ -17,7 +17,7 @@ class MapViewController: UIViewController {
     var currentLocation = MKPointAnnotation()
     var selectedClinics = MKPointAnnotation()
     var resultSearchController: UISearchController? = nil
-    var indexPathRow: Int!
+    var indexPathRow: Int?
     var types: [String] = ["generalPractioners", "psychologists", "therapists"]
     var doctorID: [String] = []
     var dbRef: FIRDatabaseReference!
@@ -81,11 +81,14 @@ class MapViewController: UIViewController {
     
     func observeDoctors(){
      
-        guard let type = types[indexPathRow] else {return}
+        guard let index = indexPathRow
+            else {return}
+        
+        let type = types[index]
         
         dbRef.child("types").child(type).observe(.value, with: { (snapshot) in
-            if let snapValues = snapshot.key as? [String]{
-                    self.doctorID?.append(snapValues)
+            if let snapValues = snapshot.key as? String{
+                    self.doctorID.append(snapValues)
                 }
         })
     }
@@ -95,8 +98,8 @@ class MapViewController: UIViewController {
         for id in doctorID{
             
             dbRef.child("doctors").child(id).observe(.value, with: { (snapshot) in
-                if let snapValues = snapshot.key as? [String]{
-                    self.doctorID?.append(snapValues)
+                if let snapValues = snapshot.key as? String{
+                    self.doctorID.append(snapValues)
                 }
             })
 
