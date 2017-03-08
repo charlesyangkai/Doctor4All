@@ -10,4 +10,6 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Eureka', '~> 2.0'
+pod 'ImageRow', '~> 1.0'
 end

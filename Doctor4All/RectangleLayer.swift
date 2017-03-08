@@ -10,9 +10,9 @@ import UIKit
 
 class RectangleLayer: CAShapeLayer {
   
-  override init!() {
+  override init() {
     super.init()
-    fillColor = Colors.clear.cgColor
+    fillColor = UIColor.clear.cgColor
     lineWidth = 5.0
     path = rectanglePathFull.cgPath
   }
@@ -33,6 +33,17 @@ class RectangleLayer: CAShapeLayer {
   }
   
   func animateStrokeWithColor(_ color: UIColor) {
+    
+    strokeColor = color.cgColor
+    
+    var strokeAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+    
+    strokeAnimation.fromValue = 0.0
+    strokeAnimation.toValue = 1.0
+    strokeAnimation.duration = 0.4
+    add(strokeAnimation, forKey: nil)
+    
+    
     
   }
 }

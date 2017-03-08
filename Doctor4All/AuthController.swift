@@ -10,34 +10,30 @@ import UIKit
 
 class AuthController: UIViewController, UIScrollViewDelegate {
     
-    @IBOutlet weak var logInButton: UIButton!
+//    @IBOutlet weak var logInButton: UIButton!
     
-    @IBOutlet weak var signUp: UIButton! {
-        
-        
-    }
     
     var colors: [UIColor] = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
     
     var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     
-    @IBOutlet weak var pageControl: UIPageControl!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var pageControl: UIPageControl!
+//    
+//    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var webViewBG: UIWebView!
     
-    
-    
-    
-    @IBAction func logIn(_ sender: Any) {
+    @IBAction func signUpButton(_ sender: UIButton) {
+        guard let controllerDirection = storyboard?.instantiateViewController(withIdentifier: "SignUpFormController") as? SignUpFormController else {return}
         
+        navigationController?.pushViewController(controllerDirection, animated: true)
         
     }
     
-    
-    @IBAction func signIn(_ sender: Any) {
+    @IBAction func logInButton(_ sender: UIButton) {
+        guard let controllerDirection = storyboard?.instantiateViewController(withIdentifier: "LogInController") as? LogInController else {return}
         
+        navigationController?.pushViewController(controllerDirection, animated: true)
         
     }
     
@@ -49,6 +45,11 @@ class AuthController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Hides navigation bar but also need to 
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        
+    
         // Do any additional setup after loading the view, typically from a nib.
         
         let htmlPath = Bundle.main.path(forResource: "WebViewContent", ofType: "html")
@@ -105,6 +106,12 @@ class AuthController: UIViewController, UIScrollViewDelegate {
 //        pageControl.currentPage = Int(pageNumber)
 //        
 //    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +123,7 @@ class AuthController: UIViewController, UIScrollViewDelegate {
         return UIStatusBarStyle.lightContent
     }
 
+    
 
 }
 

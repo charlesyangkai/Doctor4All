@@ -21,6 +21,9 @@ class LaunchyController: UIViewController, HolderViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         addHolderView()
     }
     
@@ -57,10 +60,20 @@ class LaunchyController: UIViewController, HolderViewDelegate {
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.curveEaseInOut, animations: {
             label.transform = label.transform.scaledBy(x: 4.0, y: 4.0)
         }) { (finished) in
-            self.addButton()
+            
+            self.toMainViewController()
+            //self.addButton()
             
         }
         
+    }
+    
+    func toMainViewController(){
+        let when = DispatchTime.now() + 1.5
+        
+        DispatchQueue.main.asyncAfter(deadline: when) { 
+            self.performSegue(withIdentifier: "launchySegue", sender: nil)
+        }
     }
     
     func addButton() {
@@ -78,6 +91,9 @@ class LaunchyController: UIViewController, HolderViewDelegate {
         holderView = HolderView(frame: CGRect.zero)
         addHolderView()
     }
+    
+    
+    
 }
 
 extension UIColor {

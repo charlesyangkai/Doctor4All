@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,39 +20,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72p-1G-4zg">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njy-pT-fOW">
-                                <rect key="frame" x="136" y="546" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-3W-llK">
-                                <rect key="frame" x="152" y="495" width="71" height="21"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Njy-pT-fOW" firstAttribute="top" secondItem="SJb-3W-llK" secondAttribute="bottom" constant="30" id="6b5-gf-yBI"/>
-                            <constraint firstItem="72p-1G-4zg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Dil-WR-T66"/>
-                            <constraint firstItem="Njy-pT-fOW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MGH-bE-cec"/>
-                            <constraint firstItem="72p-1G-4zg" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="OT8-Ux-xOl"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Njy-pT-fOW" secondAttribute="bottom" constant="100" id="Ug8-sQ-adi"/>
-                            <constraint firstItem="SJb-3W-llK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dzS-vq-LtZ"/>
-                            <constraint firstAttribute="trailing" secondItem="72p-1G-4zg" secondAttribute="trailing" id="paa-vf-629"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Iad-Ux-5cv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
