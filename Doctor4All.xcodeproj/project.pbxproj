@@ -10,7 +10,6 @@
 		4936CC071E6FBE1E0001C2B1 /* TableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936CC051E6FBE1E0001C2B1 /* TableViewCell2.swift */; };
 		4936CC081E6FBE1E0001C2B1 /* TableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4936CC061E6FBE1E0001C2B1 /* TableViewCell2.xib */; };
 		4936CC0A1E6FCD3F0001C2B1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4936CC091E6FCD3F0001C2B1 /* EventDetailsViewController.swift */; };
-		495F58761E69576100709A39 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495F58751E69576100709A39 /* SWRevealViewController.m */; };
 		495F589A1E69794100709A39 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F58991E69794100709A39 /* MenuViewController.swift */; };
 		495F58A01E697B6700709A39 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F589F1E697B6700709A39 /* MenuCell.swift */; };
 		49C193151E6E932600D3B0F6 /* DoctorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */; };
@@ -36,6 +35,7 @@
 		A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C01E66E45E0012270F /* MapViewController.swift */; };
 		A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C21E66E4790012270F /* DescriptionViewController.swift */; };
 		A126D6991E6C64BA004CFFFF /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126D6981E6C64BA004CFFFF /* AuthController.swift */; };
+		A13017081E702B6100FA7AA1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13017071E702B6100FA7AA1 /* SWRevealViewController.m */; };
 		A142A5521E6EBB3D0041EBAB /* SignUpFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */; };
 		A161AEDE1E67D4530071931D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A161AEDC1E67D4530071931D /* LaunchScreen.storyboard */; };
 		A161AEE41E67DB050071931D /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161AEDF1E67DB050071931D /* ArcLayer.swift */; };
@@ -55,8 +55,6 @@
 		4936CC061E6FBE1E0001C2B1 /* TableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell2.xib; sourceTree = "<group>"; };
 		4936CC091E6FCD3F0001C2B1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		495F58731E69576000709A39 /* Doctor4All-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor4All-Bridging-Header.h"; sourceTree = "<group>"; };
-		495F58741E69576100709A39 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../Downloads/lift-side-memu-in-swift-3-master 2/memuDemo/SWRevealViewController.h"; sourceTree = "<group>"; };
-		495F58751E69576100709A39 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../Downloads/lift-side-memu-in-swift-3-master 2/memuDemo/SWRevealViewController.m"; sourceTree = "<group>"; };
 		495F58991E69794100709A39 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		495F589F1E697B6700709A39 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorHomeViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +82,8 @@
 		A111F1C01E66E45E0012270F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A111F1C21E66E4790012270F /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		A126D6981E6C64BA004CFFFF /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		A13017061E702B6100FA7AA1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A13017071E702B6100FA7AA1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFormController.swift; sourceTree = "<group>"; };
 		A161AEDD1E67D4530071931D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A161AEDF1E67DB050071931D /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 				495F589F1E697B6700709A39 /* MenuCell.swift */,
 				A111F1B71E66E2FB0012270F /* TableViewCell.swift */,
 				A111F1B81E66E2FB0012270F /* TableViewCell.xib */,
-				495F58741E69576100709A39 /* SWRevealViewController.h */,
-				495F58751E69576100709A39 /* SWRevealViewController.m */,
+				A13017061E702B6100FA7AA1 /* SWRevealViewController.h */,
+				A13017071E702B6100FA7AA1 /* SWRevealViewController.m */,
 				495F58731E69576000709A39 /* Doctor4All-Bridging-Header.h */,
 				49C193131E6E928900D3B0F6 /* DoctorHome */,
 			);
@@ -406,6 +406,7 @@
 				4936CC071E6FBE1E0001C2B1 /* TableViewCell2.swift in Sources */,
 				A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */,
 				A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */,
+				A13017081E702B6100FA7AA1 /* SWRevealViewController.m in Sources */,
 				A161AEE71E67DB050071931D /* RectangleLayer.swift in Sources */,
 				A161AEE41E67DB050071931D /* ArcLayer.swift in Sources */,
 				A126D6991E6C64BA004CFFFF /* AuthController.swift in Sources */,
@@ -423,7 +424,6 @@
 				8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */,
 				8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */,
 				A161AEE51E67DB050071931D /* HolderView.swift in Sources */,
-				495F58761E69576100709A39 /* SWRevealViewController.m in Sources */,
 				A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */,
 				A161AEE81E67DB050071931D /* TriangleLayer.swift in Sources */,
 				8AA8FC6F1E6EC39B00223778 /* User.swift in Sources */,
