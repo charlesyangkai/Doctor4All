@@ -59,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NuF-Ku-AA5" id="JQ0-LY-81E">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-HY-MEx">
@@ -128,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QZ5-7D-HXm" id="AbL-1w-dQE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="203.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -156,7 +156,7 @@
                         <outlet property="btnMenu2" destination="ZPD-l9-4Um" id="ekS-jF-rDX"/>
                         <outlet property="loadingCircle" destination="ewE-Oa-OCO" id="Big-js-g1g"/>
                         <outlet property="tableView2" destination="wBE-v9-Nwm" id="PPs-I7-Y9t"/>
-                        <segue destination="K34-qE-Ioq" kind="show" id="UN3-h8-uQ1"/>
+                        <segue destination="K34-qE-Ioq" kind="show" identifier="goToEvent" id="UN3-h8-uQ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f8-Pu-60T" userLabel="First Responder" sceneMemberID="firstResponder"/>
