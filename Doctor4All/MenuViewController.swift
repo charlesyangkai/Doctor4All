@@ -19,8 +19,8 @@ class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuNameArray = ["Home","Message","Map","Setting"]
-        iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"map")!, UIImage(named:"setting")!]
+        menuNameArray = ["Home","Requests History","Profile Settings"]
+        iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!]
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -81,7 +81,7 @@ class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 //                as? MapViewController
 //            
         }
-        if cell.menuLabel.text! == "Setting"
+        if cell.menuLabel.text! == "Settings"
         {
             print("setting Tapped")
         }

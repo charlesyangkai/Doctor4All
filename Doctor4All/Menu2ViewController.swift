@@ -17,7 +17,7 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuNameArray = ["Homepage","Requests History","Settings"]
+        menuNameArray = ["Homepage","Requests History","Profile Settings"]
         iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!]
         
         tableView.delegate = self
