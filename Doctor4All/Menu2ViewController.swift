@@ -17,7 +17,7 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuNameArray = ["Homepage","Requests","Settings"]
+        menuNameArray = ["Homepage","Requests History","Settings"]
         iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!]
         
         tableView.delegate = self
@@ -54,19 +54,23 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
 
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "DoctorHome", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "DoctorHomeViewController") as! DoctorHomeViewController
+            newViewcontroller.viewMode = .new
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             
-            
+            return
         }
-        if cell.menuLabel.text! == "Requests"
+        
+        if cell.menuLabel.text! == "Requests History"
         {
             print("requests Tapped")
             
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "DoctorHome", bundle: nil)
-            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "EventDetailsNav") as! EventDetailsViewController
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "DoctorHomeViewController") as! DoctorHomeViewController
+            newViewcontroller.viewMode = .history
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            return
         }
         if cell.menuLabel.text! == "Map"
         {
