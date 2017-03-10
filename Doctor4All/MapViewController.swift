@@ -141,6 +141,7 @@ class MapViewController: UIViewController {
         
         for doctor in doctors{
             address = doctor.address!
+            print(address)
             
             let geoCoder = CLGeocoder()
             
