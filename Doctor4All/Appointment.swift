@@ -14,7 +14,7 @@ class Appointment{
     var condition: String?
     var home: Bool?
     var clinic: Bool?
-    var date: String?
+    var timeDate: String?
     var acceptedBy: String?
     
     
@@ -24,7 +24,7 @@ class Appointment{
         condition = dictionary["condition"] as? String
         home = dictionary["home"] as? Bool
         clinic = dictionary["clinic"] as? Bool
-        date = dictionary["date"] as? String
+        timeDate = dictionary["timeDate"] as? String
         acceptedBy = dictionary["acceptedBy"] as? String
         
     }

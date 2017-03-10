@@ -25,7 +25,6 @@
 		8ADD723B1E67CB6D00DCADB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */; };
 		8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD723C1E681CF900DCADB9 /* Doctor.swift */; };
 		8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */; };
-		A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AA1E66DABB0012270F /* SignUpController.swift */; };
 		A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AC1E66DAD40012270F /* LogInController.swift */; };
 		A111F1B41E66E2B50012270F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A111F1B31E66E2B50012270F /* Home.storyboard */; };
 		A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1B51E66E2CB0012270F /* HomeViewController.swift */; };
@@ -72,7 +71,6 @@
 		8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8ADD723C1E681CF900DCADB9 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A111F1AA1E66DABB0012270F /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		A111F1AC1E66DAD40012270F /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		A111F1B31E66E2B50012270F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A111F1B51E66E2CB0012270F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				A161AEEA1E67DB2E0071931D /* Loader View */,
 				8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */,
 				A126D6981E6C64BA004CFFFF /* AuthController.swift */,
-				A111F1AA1E66DABB0012270F /* SignUpController.swift */,
 				A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */,
 				A111F1AC1E66DAD40012270F /* LogInController.swift */,
 				A161AEF01E6843680071931D /* WebViewContent.html */,
@@ -405,7 +402,6 @@
 				8AA8FC6D1E6EAFBF00223778 /* AppointmentViewController.swift in Sources */,
 				4936CC071E6FBE1E0001C2B1 /* TableViewCell2.swift in Sources */,
 				A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */,
-				A111F1AB1E66DABB0012270F /* SignUpController.swift in Sources */,
 				A13017081E702B6100FA7AA1 /* SWRevealViewController.m in Sources */,
 				A161AEE71E67DB050071931D /* RectangleLayer.swift in Sources */,
 				A161AEE41E67DB050071931D /* ArcLayer.swift in Sources */,

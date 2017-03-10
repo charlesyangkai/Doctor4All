@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Eureka
 import ImageRow
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
+import Eureka
 
 class SignUpFormController: FormViewController {
     
@@ -207,8 +207,10 @@ class SignUpFormController: FormViewController {
         }
     }
     
+
+
+    
     func handleRegister() {
-        
         
         let fullnameRow: TextRow? = self.form.rowBy(tag: "registerFullName")
         let emailRow: TextRow? = self.form.rowBy(tag: "registerEmail")
@@ -261,7 +263,7 @@ class SignUpFormController: FormViewController {
             
             guard let validUserID = user?.uid else {return}
             
-            self.dbRef.child("username").updateChildValues([validUserID : userDictionary])
+            self.dbRef.child("users").updateChildValues([validUserID : userDictionary])
         })
     }
     

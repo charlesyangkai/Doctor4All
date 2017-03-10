@@ -18,12 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-        displayDoctorspage()
+        //displayDoctorspage()
         //displayRequest()
         //displayDoctors()
-        //displayAppointment()
+        displayAppointment()
         
-        //displayLogin()
         return true
     }
     
@@ -80,13 +79,5 @@ extension AppDelegate {
         let controller = storyboard.instantiateViewController(withIdentifier: "AppointmentViewController")
             as? AppointmentViewController
         window?.rootViewController = controller
-    }
-    
-    func displayLogin(){
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let controller = storyboard.instantiateViewController(withIdentifier: "AuthController")
-                as? AuthController
-            window?.rootViewController = controller
-        
     }
 }
