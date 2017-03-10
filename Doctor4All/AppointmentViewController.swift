@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class AppointmentViewController: UIViewController {
+    
+    var dbRef: FIRDatabaseReference!
     
     let datePicker = UIDatePicker()
     
@@ -27,6 +30,11 @@ class AppointmentViewController: UIViewController {
     var checkBox4 = UIImage(named: "checked")
     var uncheckBox4 = UIImage(named: "unchecked")
     var isBox4Clicked: Bool = false
+    
+    @IBOutlet weak var conditionTextView: UITextView!
+    
+    @IBOutlet weak var timeDateTextField: UITextField!
+    
     
     
     @IBOutlet weak var datePickerText: UITextField!
@@ -116,6 +124,18 @@ class AppointmentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
+
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        
+         dbRef = FIRDatabase.database().reference()
 
         createDatePicker()
     }
@@ -137,6 +157,7 @@ class AppointmentViewController: UIViewController {
         datePickerText.inputView = datePicker
     }
     
+    
     func donePressed(){
         
         // format date
@@ -148,9 +169,12 @@ class AppointmentViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    
     func buttonTapped(){
+        
+        uploadAppointment()
 
-            let alert = UIAlertController(title: "Appointment", message: "Your request for a doctor is pending.", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Appointment", message: "Your request for a doctor is being proccessed.", preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: "Okay", style: .default) { (_) in
             //call function
             let storyboardd = UIStoryboard(name: "Request", bundle: Bundle.main)
@@ -160,7 +184,16 @@ class AppointmentViewController: UIViewController {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
     }
-
+    
+    
+    func uploadAppointment(){
+        
+        guard let currentUserID = User.current.userID else {return}
+        
+        let userDictionary: [String: Any] = ["userID": currentUserID , "condition": conditionTextView , "home": isBox1Clicked, "clinic": isBox2Clicked, "timeDate": timeDateTextField, "acceptedBy": ""]
+        
+        self.dbRef.child("appointments").childByAutoId().updateChildValues(userDictionary)
+    }
 
 
 }

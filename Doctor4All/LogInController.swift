@@ -65,12 +65,19 @@ class LogInController: UIViewController {
             
             //Call self.loadChannelPage() here for customTabBarController
         })
+        
+        loadHomePage()
+        
     }
     
+    
+    
     func loadHomePage() {
-        
+        let homePage = HomeViewController()
+        present(homePage, animated: true, completion: nil)
         
     }
+
     
     @IBAction func showAlert() {
         
