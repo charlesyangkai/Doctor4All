@@ -156,8 +156,8 @@
 		8AD1C8B51E66B31900D34CCE /* Doctor4All */ = {
 			isa = PBXGroup;
 			children = (
-				A111F1AE1E66DE6B0012270F /* Authentication */,
 				A111F1BC1E66E3630012270F /* Supports */,
+				A111F1AE1E66DE6B0012270F /* Authentication */,
 				A111F1BB1E66E32F0012270F /* Home */,
 				A111F1BD1E66E3B90012270F /* Request */,
 			);
