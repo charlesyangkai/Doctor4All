@@ -81,8 +81,12 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
             //                as? MapViewController
             //
         }
-        if cell.menuLabel.text! == "Settings"
+        if cell.menuLabel.text! == "Profile Settings"
         {
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "DoctorHome", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "EditDoctorVC") as! EditDoctorProfileViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             print("setting Tapped")
         }
     }

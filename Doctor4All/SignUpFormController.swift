@@ -28,6 +28,10 @@ class SignUpFormController: FormViewController {
         }
         
     }
+    // DoctorList
+    static var doctorsList: [String] = []
+    static var usersList: [String] = []
+    
     
     var dbRef: FIRDatabaseReference!
     
@@ -258,32 +262,17 @@ class SignUpFormController: FormViewController {
             if let urlString = self.profilePictureURL?.absoluteString {
                 
                 userDictionary["profilePicture"] = urlString
-                
             }
             
             guard let validUserID = user?.uid else {return}
+            
+            // DoctorList
+            SignUpFormController.usersList.append(validUserID)
             
             self.dbRef.child("users").updateChildValues([validUserID : userDictionary])
         })
     }
     
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

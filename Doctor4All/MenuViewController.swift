@@ -54,35 +54,29 @@ class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         if cell.menuLabel.text! == "Home"
         {
             print("Home Tapped")
-           
-//            let storyboardd = UIStoryboard(name: "Home", bundle: Bundle.main)
-//            let mapViewController = storyboardd.instantiateViewController(withIdentifier: "HomeViewController") as? UINavigationController
-           
+            
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
            
         }
-        if cell.menuLabel.text! == "Message"
+      
+        if cell.menuLabel.text! == "Requests History"
         {
-            print("message Tapped")
-//            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
-//            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
-//            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "UserRequestsHistory") as! RequstsHistoryViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            print("Requests History Tapped")
         }
-        if cell.menuLabel.text! == "Map"
+        if cell.menuLabel.text! == "Profile Settings"
         {
-            print("Map Tapped")
-//            
-//            let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "MapViewController")
-//                as? MapViewController
-//            
-        }
-        if cell.menuLabel.text! == "Settings"
-        {
+            
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "editProfile") as! EditViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             print("setting Tapped")
         }
     }

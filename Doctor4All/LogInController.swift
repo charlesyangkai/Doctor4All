@@ -13,6 +13,8 @@ import FirebaseDatabase
 var currentUser: String?
 class LogInController: UIViewController {
     
+    //Diffferentiate user and doctor
+    
     
     
     @IBOutlet weak var backGroundImageView: UINavigationItem!
@@ -62,53 +64,45 @@ class LogInController: UIViewController {
                 return
             }
             self.handleUser(user: user!)
-            
-            //Call self.loadChannelPage() here for customTabBarController
         })
-        
-        loadHomePage()
         
     }
     
     
     
-    func loadHomePage() {
+    func loadUserHomePage() {
         let homePage = HomeViewController()
         present(homePage, animated: true, completion: nil)
         
     }
-
     
-    @IBAction func showAlert() {
-        
-        
+    func loadDoctorHomePage() {
+        let homePage = DoctorHomeViewController()
+        present(homePage, animated: true, completion: nil)
         
     }
+
+
     
     
     func handleUser(user: FIRUser){
         
+        if SignUpFormController.usersList.contains(user.uid){
+        
         User.current.userID = user.uid
         User.current.fetchUserInformationViaID()
-        
         print("user logged in")
-    }
-    
-    
-    func loadChannelPage() {
-        let docPage = String()
+        loadUserHomePage()
+        }
         
+        
+        // DoctorList
+        if SignUpFormController.doctorsList.contains(user.uid){
+            
+            Doctor.current.doctorID = user.uid
+            Doctor.current.fetchDoctorInformationViaID()
+            print("doctor logged in")
+            loadDoctorHomePage()
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

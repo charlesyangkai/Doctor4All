@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
 
+  
+    
     var tableDoctors: [String] = ["General Practitioner","Therapist","Psychologist","Nurse"]
     
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+     
         
        
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
@@ -30,8 +33,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return tableDoctors.count
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 	{
         
@@ -50,7 +56,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let storyboardd = UIStoryboard(name: "Request", bundle: Bundle.main)
         let mapViewController = storyboardd.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationController?.pushViewController(mapViewController!, animated: true)
-        mapViewController?.indexPathRow = indexPath.row
+        
+        //mapViewController?.indexPathRow = indexPath.row
 //        print(mapViewController?.indexPathRow)
     }
     

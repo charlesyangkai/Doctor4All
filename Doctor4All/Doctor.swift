@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class Doctor {
     
+    var doctorID: String?
     var name: String?
     var type: String? //dropdown
     var age: String?
@@ -26,8 +30,12 @@ class Doctor {
     var clinicName: String?
     
     
+    static var current : Doctor = Doctor()
+    init(){}
+    
     init(withDictionary dictionary: [String:Any]){
         
+        doctorID = dictionary["doctorID"] as? String
         name = dictionary["name"] as? String
         type = dictionary["type"] as? String
         age = dictionary["age"] as? String
@@ -54,6 +62,19 @@ class Doctor {
         
         
     }
+    
+    
+    func fetchDoctorInformationViaID() {
+        FIRDatabase.database().reference().child("doctors").child(doctorID!).observe(.value, with: { (snapshot) in
+            guard let value = snapshot.value as? [String: Any] else {return}
+            let newDoctor = Doctor(withDictionary: value)
+            newDoctor.doctorID = snapshot.key
+            
+            Doctor.current = newDoctor
+            
+        })
+    }
+
     
     
     
