@@ -199,9 +199,9 @@ class SignUpFormController: FormViewController {
             let alert = UIAlertController(title: "Sign up complete!", message: "Proceed to log in.", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Awesome", style: .default, handler: { (UIAlertAction) in
-                let controllerDirection = self.storyboard?.instantiateViewController(withIdentifier: "LogInController") as? LogInController
+                let signUpComplete = self.storyboard?.instantiateViewController(withIdentifier: "LogInController") as? LogInController
                 
-                controllerDirection
+                self.navigationController?.pushViewController(signUpComplete!, animated: true)
             })
             
             alert.addAction(action)
