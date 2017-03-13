@@ -75,7 +75,7 @@
         <!--Log In Controller-->
         <scene sceneID="cS3-D2-cxE">
             <objects>
-                <viewController storyboardIdentifier="LogInController" id="uc2-Ya-s9y" customClass="LogInController" customModule="Doctor4All" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uc2-Ya-s9y" customClass="LogInController" customModule="Doctor4All" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F40-8z-4dD"/>
                         <viewControllerLayoutGuide type="bottom" id="A3M-Oa-usR"/>

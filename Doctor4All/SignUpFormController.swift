@@ -6,8 +6,10 @@
 //  Copyright © 2017 NextAcademy. All rights reserved.
 //
 
+/// PhotoLibraryServices and AssestsLibraryServices
 import UIKit
 import ImageRow
+import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
@@ -15,9 +17,7 @@ import Eureka
 
 class SignUpFormController: FormViewController {
     
-    @IBOutlet weak var registerUsername: UITextField!
     
-    @IBOutlet weak var registerEmail: UITextField!
     
     @IBOutlet weak var registerPassword: UITextField!
     
@@ -37,15 +37,7 @@ class SignUpFormController: FormViewController {
     
     var profilePictureURL: URL?
     
-    @IBOutlet weak var userSelectImage: UIImageView! {
-        didSet {
-            userSelectImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
-            
-            userSelectImage.isUserInteractionEnabled = true
-            
-            return
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,34 +45,14 @@ class SignUpFormController: FormViewController {
         
         form +++ Section()
             
-            
-            <<< ImageRow() { row in
-                row.title = "Image Row 1"
+            <<< UserImageRow(){
+                row in
                 row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
                 row.clearAction = .yes(style: UIAlertActionStyle.destructive)
+                row.tag = "uploadMethod"
             }
-            +++
-            Section()
-            <<< ImageRow() {
-                $0.title = "Image Row 2"
-                $0.sourceTypes = .PhotoLibrary
-                $0.clearAction = .no
-                }
-                .cellUpdate { cell, row in
-                    cell.accessoryView?.layer.cornerRadius = 17
-                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-            }
-            +++
-            Section()
-            <<< ImageRow() {
-                $0.title = "Image Row 3"
-                $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-                $0.clearAction = .yes(style: .default)
-        }
-    
-        form +++ Section("Credentials")
-    
-    
+            
+            +++ Section("Credentials")
             <<< TextRow() {
                 row in
                 row.title = "Full Name"
@@ -115,16 +87,11 @@ class SignUpFormController: FormViewController {
             <<< PickerInputRow<String>() {
                 $0.title = "Gender"
                 
-                $0.options.append("Gender")
+                $0.options.append("Select")
                 $0.options.append("Male")
                 $0.options.append("Female")
                 $0.value = $0.options.first
-            }
-            <<< TextRow() {
-                row in
-                row.title = "Gender"
-                row.placeholder = "Gender"
-                row.tag = "registerGender"
+                $0.tag = "registerGender"
             }
             <<< PhoneRow() {
                 row in
@@ -189,14 +156,20 @@ class SignUpFormController: FormViewController {
         
         metadata.contentType = "image/jpeg"
         
+        //let uploadMethod: UserImageRow? = self.form.rowBy(tag: "uploadMethod")
+        
         let timeStamp = String(Date.timeIntervalSinceReferenceDate)
         let convertedTimeStamp = timeStamp.replacingOccurrences(of: ".", with: "")
         let profilePictureName = ("image \(convertedTimeStamp).jpeg")
         
+        print(profilePictureName)
+        
+        //profilePicture = uploadMethod?.value
+        
         guard let profilePictureData = UIImageJPEGRepresentation(image, 0.8) else {return}
         
         storageRef.child(profilePictureName).put(profilePictureData, metadata: metadata) { (meta, error) in
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
             
             if error != nil {
                 
@@ -211,19 +184,56 @@ class SignUpFormController: FormViewController {
         }
     }
     
-
-
+    
+    // profilePicture  is the uiimage we wnt
+    // then js run uploadprofileimage with profilepicture as parameter
+    func justForPicture() {
+        let uploadMethod: UserImageRow? = self.form.rowBy(tag: "uploadMethod")
+        
+        guard let profilePicture = uploadMethod?.value else {return}
+        
+        uploadProfileImage(image: profilePicture)
+    }
+    
     
     func handleRegister() {
+        
+        func showIncompleteAlert() {
+            let alert = UIAlertController(title: "Error!", message: "Please fill out all empty credentials.", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+            
+        }
+        
+        func showCompleteAlert() {
+            let alert = UIAlertController(title: "Sign up complete!", message: "Proceed to log in.", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Awesome", style: .default, handler: { (UIAlertAction) in
+                let signUpComplete = self.storyboard?.instantiateViewController(withIdentifier: "LogInController") as? LogInController
+                
+                self.navigationController?.pushViewController(signUpComplete!, animated: true)
+            })
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            
+        }
+        
+        justForPicture()
         
         let fullnameRow: TextRow? = self.form.rowBy(tag: "registerFullName")
         let emailRow: TextRow? = self.form.rowBy(tag: "registerEmail")
         let passwordRow: PasswordRow? = self.form.rowBy(tag: "registerPassword")
         //        let confirmPasswordRow: TextRow? = self.form.rowBy(tag: "registerConfirmPassword")
         let ageRow: TextRow? = self.form.rowBy(tag: "registerAge")
-        let genderRow: TextRow? = self.form.rowBy(tag: "registerGender")
+        let genderRow: PickerInputRow<String>? = self.form.rowBy(tag: "registerGender")
         let contactNumberRow: PhoneRow? = self.form.rowBy(tag: "registerNumber")
         let addressRow: TextAreaRow? = self.form.rowBy(tag: "registerAddress")
+        let ailmentsRow: TextAreaRow? = self.form.rowBy(tag: "registerAilments")
         let emergencyNameRow: TextRow? = self.form.rowBy(tag: "registerEmergencyName")
         let emergencyNumberRow: PhoneRow? = self.form.rowBy(tag: "registerEmergencyNumber")
         let emergencyRelationshipRow: TextRow? = self.form.rowBy(tag: "registerEmergencyRelationship")
@@ -239,10 +249,13 @@ class SignUpFormController: FormViewController {
             let gender = genderRow?.value,
             let contactNumber = contactNumberRow?.value,
             let address = addressRow?.value,
+            let ailments = ailmentsRow?.value,
             let emergencyName = emergencyNameRow?.value,
             let emergencyNumber = emergencyNumberRow?.value,
             let emergencyRelationship = emergencyRelationshipRow?.value
-            else { return }
+            else {
+                showIncompleteAlert()
+                return} // RETURN AND DO AN ALERT SAYING NOT ALL INFORMATION ARE FILLED
         
         
         
@@ -251,13 +264,12 @@ class SignUpFormController: FormViewController {
                 
                 print(error! as NSError)
                 return
+            } else {
+               showCompleteAlert()
+                
             }
             
-            
-            
-            
-            
-            var userDictionary: [String: Any] = ["fullName": fullname , "email": email , "password": password, "age": age, "gender": gender, "contactNumber": contactNumber, "address": address, "emergencyContactName": emergencyName, "emergencyContactNumber": emergencyNumber, "emergencyContactRelationship": emergencyRelationship]
+            var userDictionary: [String: Any] = ["fullName": fullname , "email": email , "password": password, "age": age, "gender": gender, "contactNumber": contactNumber, "address": address,"ailments": ailments, "emergencyContactName": emergencyName, "emergencyContactNumber": emergencyNumber, "emergencyContactRelationship": emergencyRelationship]
             
             if let urlString = self.profilePictureURL?.absoluteString {
                 
@@ -266,8 +278,7 @@ class SignUpFormController: FormViewController {
             
             guard let validUserID = user?.uid else {return}
             
-            // DoctorList
-            SignUpFormController.usersList.append(validUserID)
+            // self.dbRef.child("users").child(validUserID).setValue(userDictionary)
             
             self.dbRef.child("users").updateChildValues([validUserID : userDictionary])
         })
@@ -275,68 +286,6 @@ class SignUpFormController: FormViewController {
     
     
 }
-
-extension SignUpFormController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func handleSelectProfileImageView() {
-        
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.allowsEditing = true
-        
-        self.present(picker, animated: true, completion: nil)
-    }
-    
-    
-    func imagePickerDidCancel(_ picker: UIImagePickerController) {
-        
-        dismiss(animated: true, completion: nil)
-        
-        
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        var selectedImageFromPicker: UIImage?
-        
-        if let editedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            
-            selectedImageFromPicker = editedImage
-            
-        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            
-            selectedImageFromPicker = originalImage
-        }
-        if let selectedImage = selectedImageFromPicker {
-            
-            userSelectImage.image = selectedImage
-        }
-        
-        uploadProfileImage(image: selectedImageFromPicker!)
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
-    
-    
-    
-    
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
