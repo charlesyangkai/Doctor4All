@@ -8,12 +8,12 @@
 
 /// PhotoLibraryServices and AssestsLibraryServices
 import UIKit
-import Eureka
 import ImageRow
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
+import Eureka
 
 class SignUpFormController: FormViewController {
     

@@ -10,11 +10,23 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
 
+    var viewMode : ViewMode = .new
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        switch viewMode {
+        case .new:
+            declineButton.isHidden = false
+            acceptButton.isHidden = false
+        case .history:
+            declineButton.isHidden = true
+            acceptButton.isHidden = true
+        }
        // menuButton.target = self.revealViewController()
        // menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         // Do any additional setup after loading the view.

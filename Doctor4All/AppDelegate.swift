@@ -60,8 +60,8 @@ extension AppDelegate {
     
     func displayRequest(){
         let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MapViewController")
-            as? MapViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "UINavigationController")
+            as? UINavigationController
         window?.rootViewController = controller
     }
     

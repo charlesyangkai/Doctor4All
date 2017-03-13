@@ -141,6 +141,7 @@ class MapViewController: UIViewController {
         
         for doctor in doctors{
             address = doctor.address!
+            print(address)
             
             let geoCoder = CLGeocoder()
             
@@ -152,9 +153,10 @@ class MapViewController: UIViewController {
                         //if let placemark = placemarks.first {
                             let annotation = MKPointAnnotation()
                             annotation.coordinate = (placemark.location?.coordinate)!
+                            print(annotation.coordinate)
                             //self.mapView.showAnnotations([annotation], animated: true)
-                            //self.mapView.selectedAnnotations(annotation, animated: true)
-                            self.mapView.addAnnotation(annotation)
+                            //self.mapView.selectedAnnotations([annotation], animated: true)
+                            self.mapView.addAnnotations([annotation])
                         }
                     }
                 }

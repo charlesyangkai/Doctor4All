@@ -33,8 +33,7 @@ class AuthController: UIViewController, UIScrollViewDelegate {
     @IBAction func logInButton(_ sender: UIButton) {
         guard let controllerDirection = storyboard?.instantiateViewController(withIdentifier: "LogInController") as? LogInController else {return}
         
-        navigationController?.pushViewController(controllerDirection, animated: true)
-        
+        navigationController?.pushViewController(controllerDirection, animated: true) 
     }
     
     

@@ -8,12 +8,20 @@
 
 import UIKit
 
+enum ViewMode {
+    case new
+    case history
+}
+
 class DoctorHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var viewMode : ViewMode = .new
+    
     @IBOutlet weak var availableSwitch: UISwitch!
     @IBOutlet weak var btnMenu2: UIBarButtonItem!
     @IBOutlet weak var tableView2: UITableView!
     @IBOutlet weak var loadingCircle: UIActivityIndicatorView!
+    @IBOutlet weak var stackView : UIStackView!
     
     var tableRequests: [String] = ["person1","peson2","person3"]
 
@@ -27,6 +35,19 @@ class DoctorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView2.delegate = self
         tableView2.dataSource = self
         
+        switch viewMode {
+        case .new:
+            // call a function for new
+            stackView.isHidden = false
+            observeAllDoctors()
+            break
+        case .history:
+            stackView.isHidden = true
+            observeDoctorHistories()
+            // call a function for history
+            break
+        }
+        
         
         let nib = UINib(nibName: "TableViewCell2", bundle: nil)
         tableView2.register(nib, forCellReuseIdentifier: "cell")
@@ -38,6 +59,15 @@ class DoctorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
         
     }
+    
+    func observeAllDoctors(){
+        // obsever firebase for new
+    }
+    
+    func observeDoctorHistories(){
+        // observe firebase for histories
+    }
+    
     @IBAction func changSwitch(_ sender: UISwitch) {
         if availableSwitch.isOn == true{
             
@@ -82,13 +112,37 @@ class DoctorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
         print("Row \(indexPath.row) selected")
         
         
-        let storyboardd = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
-        let eventViewController = storyboardd.instantiateViewController(withIdentifier: "EventDetailsNav") as? UIViewController
-        self.navigationController?.pushViewController(eventViewController!, animated: true)
-        //        mapViewController?.indexPathRow = indexPath.row
-        //        print(mapViewController?.indexPathRow)
+//        let currentStoryboard : String! = self.restorationIdentifier
+//        if currentStoryboard == "DoctorHomeViewController" {
+            let storyboard = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
+            let eventViewController = storyboard.instantiateViewController(withIdentifier: "EventDetailsNav") as? EventDetailsViewController
+            eventViewController?.viewMode = viewMode
+            self.navigationController?.pushViewController(eventViewController!, animated: true)
+//        }
+        
+//        else if currentStoryboard == "DoctorHomeViewController" {
+//            let storyboard = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
+//            let eventViewController = storyboard.instantiateViewController(withIdentifier: "RequestsHistory") as? EventDetailsViewController
+//            eventViewController?.viewMode = .history
+//            self.navigationController?.pushViewController(eventViewController!, animated: true)
+//        }
+
+//        if let storyboardName = self.storyboard?.value(forKey: "name") as? String, storyboardName == "DoctorHomeViewController"  {
+//            
+//        let storyboardd = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
+//        let eventViewController = storyboardd.instantiateViewController(withIdentifier: "EventDetailsNav") as? UIViewController
+//        self.navigationController?.pushViewController(eventViewController!, animated: true)
+//        }
+//            
+//        else{
+//            let storyboardd = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
+//            let eventViewController = storyboardd.instantiateViewController(withIdentifier: "RequestsHistory") as? UIViewController
+//            self.navigationController?.pushViewController(eventViewController!, animated: true)
+//        }
+        
+        }
     }
     
     
     
-}
+
