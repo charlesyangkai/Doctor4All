@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         //displayDoctorspage()
         //displayRequest()
-        displayDoctors()
+//        displayDoctors()
         //displayAppointment()
         
         return true

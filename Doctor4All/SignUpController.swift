@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Eureka
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase

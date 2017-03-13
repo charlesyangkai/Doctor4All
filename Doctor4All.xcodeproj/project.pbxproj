@@ -46,6 +46,11 @@
 		A161AEEC1E6824B90071931D /* LaunchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161AEEB1E6824B90071931D /* LaunchyController.swift */; };
 		A161AEEE1E683A190071931D /* railway.gif in Resources */ = {isa = PBXBuildFile; fileRef = A161AEED1E683A190071931D /* railway.gif */; };
 		A161AEF11E6843680071931D /* WebViewContent.html in Resources */ = {isa = PBXBuildFile; fileRef = A161AEF01E6843680071931D /* WebViewContent.html */; };
+		A1E646BC1E71158700A006FE /* StructUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646BB1E71158700A006FE /* StructUser.swift */; };
+		A1E646C11E711B2200A006FE /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646BF1E711B2200A006FE /* UserInfoCell.swift */; };
+		A1E646C21E711B2200A006FE /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E646C01E711B2200A006FE /* UserInfoCell.xib */; };
+		A1E646C41E714D7200A006FE /* UserInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646C31E714D7200A006FE /* UserInfoRow.swift */; };
+		A1E646C81E72AAC100A006FE /* UserImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E646C61E72AAC100A006FE /* UserImageCell.xib */; };
 		CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +99,11 @@
 		A161AEEB1E6824B90071931D /* LaunchyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchyController.swift; sourceTree = "<group>"; };
 		A161AEED1E683A190071931D /* railway.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = railway.gif; sourceTree = "<group>"; };
 		A161AEF01E6843680071931D /* WebViewContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WebViewContent.html; sourceTree = "<group>"; };
+		A1E646BB1E71158700A006FE /* StructUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructUser.swift; sourceTree = "<group>"; };
+		A1E646BF1E711B2200A006FE /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		A1E646C01E711B2200A006FE /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		A1E646C31E714D7200A006FE /* UserInfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoRow.swift; sourceTree = "<group>"; };
+		A1E646C61E72AAC100A006FE /* UserImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserImageCell.xib; sourceTree = "<group>"; };
 		A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor4All.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +188,11 @@
 			children = (
 				A161AEEA1E67DB2E0071931D /* Loader View */,
 				8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */,
+				A1E646BB1E71158700A006FE /* StructUser.swift */,
+				A1E646BF1E711B2200A006FE /* UserInfoCell.swift */,
+				A1E646C31E714D7200A006FE /* UserInfoRow.swift */,
+				A1E646C61E72AAC100A006FE /* UserImageCell.xib */,
+				A1E646C01E711B2200A006FE /* UserInfoCell.xib */,
 				A126D6981E6C64BA004CFFFF /* AuthController.swift */,
 				A111F1AA1E66DABB0012270F /* SignUpController.swift */,
 				A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */,
@@ -230,13 +245,6 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
-		A142A5531E6F0A400041EBAB /* Class */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Class;
-			sourceTree = "<group>";
-		};
 		A161AEE91E67DB100071931D /* Layers */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +259,6 @@
 		A161AEEA1E67DB2E0071931D /* Loader View */ = {
 			isa = PBXGroup;
 			children = (
-				A142A5531E6F0A400041EBAB /* Class */,
 				A161AEDC1E67D4530071931D /* LaunchScreen.storyboard */,
 				A161AEE01E67DB050071931D /* HolderView.swift */,
 				A161AEEB1E6824B90071931D /* LaunchyController.swift */,
@@ -340,9 +347,11 @@
 				4936CC081E6FBE1E0001C2B1 /* TableViewCell2.xib in Resources */,
 				A111F1B41E66E2B50012270F /* Home.storyboard in Resources */,
 				8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */,
+				A1E646C21E711B2200A006FE /* UserInfoCell.xib in Resources */,
 				A161AEDE1E67D4530071931D /* LaunchScreen.storyboard in Resources */,
 				8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */,
 				8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */,
+				A1E646C81E72AAC100A006FE /* UserImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +418,7 @@
 				A13017081E702B6100FA7AA1 /* SWRevealViewController.m in Sources */,
 				A161AEE71E67DB050071931D /* RectangleLayer.swift in Sources */,
 				A161AEE41E67DB050071931D /* ArcLayer.swift in Sources */,
+				A1E646C11E711B2200A006FE /* UserInfoCell.swift in Sources */,
 				A126D6991E6C64BA004CFFFF /* AuthController.swift in Sources */,
 				A142A5521E6EBB3D0041EBAB /* SignUpFormController.swift in Sources */,
 				495F58A01E697B6700709A39 /* MenuCell.swift in Sources */,
@@ -422,6 +432,8 @@
 				A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */,
 				49C1931C1E6EAD9200D3B0F6 /* Menu2ViewController.swift in Sources */,
 				8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */,
+				A1E646BC1E71158700A006FE /* StructUser.swift in Sources */,
+				A1E646C41E714D7200A006FE /* UserInfoRow.swift in Sources */,
 				8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */,
 				A161AEE51E67DB050071931D /* HolderView.swift in Sources */,
 				A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */,
