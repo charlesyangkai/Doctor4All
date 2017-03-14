@@ -10,30 +10,35 @@ import UIKit
 
 class AuthController: UIViewController, UIScrollViewDelegate {
     
-//    @IBOutlet weak var logInButton: UIButton!
-    
-    
     var colors: [UIColor] = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
     
     var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     
-//    @IBOutlet weak var pageControl: UIPageControl!
-//    
-//    @IBOutlet weak var scrollView: UIScrollView!
+
     
     @IBOutlet weak var webViewBG: UIWebView!
-    
+    // Sign Up Button
     @IBAction func signUpButton(_ sender: UIButton) {
-        guard let controllerDirection = storyboard?.instantiateViewController(withIdentifier: "SignUpFormController") as? SignUpFormController else {return}
+        guard let signUpDirection = storyboard?.instantiateViewController(withIdentifier: "SignUpFormController") as? SignUpFormController else {return}
         
-        navigationController?.pushViewController(controllerDirection, animated: true)
+        navigationController?.pushViewController(signUpDirection, animated: true)
         
     }
-    
-    @IBAction func logInButton(_ sender: UIButton) {
-        guard let controllerDirection = storyboard?.instantiateViewController(withIdentifier: "LogInController") as? LogInController else {return}
         
-        navigationController?.pushViewController(controllerDirection, animated: true) 
+    @IBAction func userLogIn(_ sender: UIButton) {
+        guard let userLogInDirection = storyboard?.instantiateViewController(withIdentifier: "UserLogInController") as? UserLogInController else {
+            return
+        }
+        
+        navigationController?.pushViewController(userLogInDirection, animated: true)
+    }
+    
+    @IBAction func doctorLogIn(_ sender: UIButton) {
+        guard let doctorLogInDirection = storyboard?.instantiateViewController(withIdentifier: "DoctorLogInController") as? DoctorLogInController else {
+            return
+        }
+     
+        navigationController?.pushViewController(doctorLogInDirection, animated: true)
     }
     
     
@@ -44,7 +49,7 @@ class AuthController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Hides navigation bar but also need to 
+        //Hides navigation bar but also need to
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         

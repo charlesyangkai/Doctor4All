@@ -48,15 +48,15 @@ class Doctor {
         email = dictionary["email"] as? String
         clinicName = dictionary["clinicName"] as? String
         
-        if let pictureURL = dictionary["picture"] as? String{
+        if let pictureURL = dictionary["picture"] as? String {
             picture = URL(string: pictureURL)
         }
         
-        if let certPictureURL = dictionary["certPicture"] as? String{
+        if let certPictureURL = dictionary["certPicture"] as? String {
             certPicture = URL(string: certPictureURL)
         }
         
-        if let icPictureURL = dictionary["icPicture"] as? String{
+        if let icPictureURL = dictionary["icPicture"] as? String {
             icPicture = URL(string: icPictureURL)
         }
         

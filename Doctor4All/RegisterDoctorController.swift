@@ -1,5 +1,5 @@
 //
-//  SignUpFormController.swift
+//  RegisterDoctorController.swift
 //  Doctor4All
 //
 //  Created by Kyle Gorter on 3/1/17.
@@ -14,23 +14,27 @@ import FirebaseStorage
 import FirebaseDatabase
 import Eureka
 
-class SignUpFormController: FormViewController {
+class RegisterDoctorController: FormViewController {
+    
+    
     
     var dbRef: FIRDatabaseReference!
     
     var profilePictureURL: URL?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         form +++ Section()
-            
-            <<< UserImageRow(){
+            <<< UserImageRow() {
                 row in
+
                 row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
                 row.clearAction = .yes(style: UIAlertActionStyle.destructive)
-                row.tag = "uploadMethod"
+                row.tag = "uploadProfilePic"
             }
             
             +++ Section("Credentials")
@@ -52,6 +56,33 @@ class SignUpFormController: FormViewController {
                 row.placeholder = "Password"
                 row.tag = "registerPassword"
             }
+            /*---------------------------*/
+            <<< PickerInputRow<String>() {
+                $0.title = "Type of Doctor"
+                
+                $0.options.append("Select")
+                $0.options.append("General Practitioner")
+                $0.options.append("Audiologist")
+                $0.options.append("Allergist")
+                $0.options.append("Andrologist")
+                $0.options.append("Cardiologist")
+                $0.options.append("Dentist")
+                $0.options.append("Dermatologist")
+                $0.options.append("ENT Specialist")
+                $0.options.append("Gynecologist")
+                $0.options.append("Neurologist")
+                $0.options.append("Oncologist")
+                $0.options.append("Orthopedist")
+                $0.options.append("Pediatrician")
+                $0.options.append("Physiologist")
+                $0.options.append("Podiatrist")
+                $0.options.append("Psychiatrist")
+                $0.options.append("Urologist")
+                $0.options.append("Veterinarian")
+                
+                $0.value = $0.options.first
+                $0.tag = "registerType"
+            }
             //            <<< TextRow() {
             //                row in
             //                row.title = "Confirm Password"
@@ -64,7 +95,6 @@ class SignUpFormController: FormViewController {
                 row.placeholder = "Age"
                 row.tag = "registerAge"
             }
-            
             <<< PickerInputRow<String>() {
                 $0.title = "Gender"
                 
@@ -86,33 +116,31 @@ class SignUpFormController: FormViewController {
                 $0.textAreaHeight = .dynamic(initialTextViewHeight: 100)
                 $0.tag = "registerAddress"
             }
-            
-            +++ Section("Allergies and existing conditions")
-            <<< TextAreaRow() {
-                $0.placeholder = "Please seperate conditions with commas"
-                $0.textAreaHeight = .dynamic(initialTextViewHeight: 150)
-                $0.tag = "registerAilments"
+            +++ Section("Relative Certificates")
+            <<< DoctorImageRow() {
+                row in
+                
+                row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
+                row.clearAction = .yes(style: UIAlertActionStyle.destructive)
+                row.tag = "uploadCertPic"
             }
+            +++ Section("Relative Identification Certificates(IC)")
+            <<< DoctorImageRow() {
+                row in
+                
+                row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
+                row.clearAction = .yes(style: UIAlertActionStyle.destructive)
+                row.tag = "uploadICPic"
+            }
+            +++ Section()
             
-            +++ Section("Emergency Contact Name")
+            
+            /*----------------------------------------*/
             <<< TextRow() {
                 row in
-                row.placeholder = "Emergency Contact Name"
-                row.tag = "registerEmergencyName"
-            }
-            
-            +++ Section("Emergency Contact Number")
-            <<< PhoneRow() {
-                row in
-                row.placeholder = "Emergency Contact Number"
-                row.tag = "registerEmergencyNumber"
-            }
-            
-            +++ Section("Emergency Contact Relationship")
-            <<< TextRow() {
-                row in
-                row.placeholder = "Emergency Contact Relationship"
-                row.tag = "registerEmergencyRelationship"
+                row.title = "Clinic Name"
+                row.placeholder = "Clinic Name"
+                row.tag = "registerClinic"
             }
             
             +++ Section()
@@ -130,7 +158,7 @@ class SignUpFormController: FormViewController {
         // Do any additional setup after loading the view.
     }
     
-    func uploadProfileImage(image: UIImage) {
+    func uploadImage(image: UIImage) {
         
         let storageRef = FIRStorage.storage().reference()
         let metadata = FIRStorageMetadata()
@@ -168,12 +196,29 @@ class SignUpFormController: FormViewController {
     
     // profilePicture  is the uiimage we wnt
     // then js run uploadprofileimage with profilepicture as parameter
-    func justForPicture() {
-        let uploadMethod: UserImageRow? = self.form.rowBy(tag: "uploadMethod")
+    func uploadProfilePic() {
+        let uploadMethod: UserImageRow? = self.form.rowBy(tag: "uploadProfilePic")
         
         guard let profilePicture = uploadMethod?.value else {return}
         
-        uploadProfileImage(image: profilePicture)
+        uploadImage(image: profilePicture)
+    }
+    
+    func uploadCertPic() {
+        let uploadMethod: DoctorImageRow? = self.form.rowBy(tag: "uploadCertPic")
+        
+        guard let certPic = uploadMethod?.value else {return}
+        
+        uploadImage(image: certPic)
+    }
+    
+    func uploadICPic() {
+        let uploadMethod: DoctorImageRow? = self.form.rowBy(tag: "uploadICPic")
+        
+        guard let icPic = uploadMethod?.value else {return}
+        
+        uploadImage(image: icPic)
+        
     }
     
     
@@ -194,7 +239,7 @@ class SignUpFormController: FormViewController {
             let alert = UIAlertController(title: "Sign up complete!", message: "Proceed to log in.", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Awesome", style: .default, handler: { (UIAlertAction) in
-                let signUpComplete = self.storyboard?.instantiateViewController(withIdentifier: "UserLogInController") as? UserLogInController
+                let signUpComplete = self.storyboard?.instantiateViewController(withIdentifier: "LogInController") as? UserLogInController
                 
                 self.navigationController?.pushViewController(signUpComplete!, animated: true)
             })
@@ -204,20 +249,26 @@ class SignUpFormController: FormViewController {
             
         }
         
-        justForPicture()
+        uploadProfilePic()
+        
+        uploadCertPic()
+        
+        uploadICPic()
         
         let fullnameRow: TextRow? = self.form.rowBy(tag: "registerFullName")
         let emailRow: TextRow? = self.form.rowBy(tag: "registerEmail")
         let passwordRow: PasswordRow? = self.form.rowBy(tag: "registerPassword")
+        let typeRow: PickerInputRow<String>? = self.form.rowBy(tag: "registerType")
         //        let confirmPasswordRow: TextRow? = self.form.rowBy(tag: "registerConfirmPassword")
         let ageRow: TextRow? = self.form.rowBy(tag: "registerAge")
         let genderRow: PickerInputRow<String>? = self.form.rowBy(tag: "registerGender")
         let contactNumberRow: PhoneRow? = self.form.rowBy(tag: "registerNumber")
         let addressRow: TextAreaRow? = self.form.rowBy(tag: "registerAddress")
-        let ailmentsRow: TextAreaRow? = self.form.rowBy(tag: "registerAilments")
-        let emergencyNameRow: TextRow? = self.form.rowBy(tag: "registerEmergencyName")
-        let emergencyNumberRow: PhoneRow? = self.form.rowBy(tag: "registerEmergencyNumber")
-        let emergencyRelationshipRow: TextRow? = self.form.rowBy(tag: "registerEmergencyRelationship")
+        let clinicRow: TextRow? = self.form.rowBy(tag: "registerClinic")
+//        let ailmentsRow: TextAreaRow? = self.form.rowBy(tag: "registerAilments")
+//        let emergencyNameRow: TextRow? = self.form.rowBy(tag: "registerEmergencyName")
+//        let emergencyNumberRow: PhoneRow? = self.form.rowBy(tag: "registerEmergencyNumber")
+//        let emergencyRelationshipRow: TextRow? = self.form.rowBy(tag: "registerEmergencyRelationship")
         
         
         
@@ -225,15 +276,17 @@ class SignUpFormController: FormViewController {
             let fullname = fullnameRow?.value,
             let email = emailRow?.value,
             let password = passwordRow?.value,
+            let type = typeRow?.value,
             //            let confirmPassword = confirmPasswordRow?.value,
             let age = ageRow?.value,
             let gender = genderRow?.value,
             let contactNumber = contactNumberRow?.value,
             let address = addressRow?.value,
-            let ailments = ailmentsRow?.value,
-            let emergencyName = emergencyNameRow?.value,
-            let emergencyNumber = emergencyNumberRow?.value,
-            let emergencyRelationship = emergencyRelationshipRow?.value
+            let clinic = clinicRow?.value
+//            let ailments = ailmentsRow?.value,
+//            let emergencyName = emergencyNameRow?.value,
+//            let emergencyNumber = emergencyNumberRow?.value,
+//            let emergencyRelationship = emergencyRelationshipRow?.value
             else {
                 showIncompleteAlert()
                 return} // RETURN AND DO AN ALERT SAYING NOT ALL INFORMATION ARE FILLED
@@ -246,27 +299,44 @@ class SignUpFormController: FormViewController {
                 print(error! as NSError)
                 return
             } else {
-               showCompleteAlert()
-                
+                showCompleteAlert()
             }
             
-            var userDictionary: [String: Any] = ["fullName": fullname , "email": email , "password": password, "age": age, "gender": gender, "contactNumber": contactNumber, "address": address,"ailments": ailments, "emergencyContactName": emergencyName, "emergencyContactNumber": emergencyNumber, "emergencyContactRelationship": emergencyRelationship]
+            var userDictionary: [String: Any] = ["fullName": fullname , "email": email , "password": password,"type": type, "age": age, "gender": gender, "contactNumber": contactNumber, "address": address, "clinic": clinic]
+            
+            //"ailments": ailments, "emergencyContactName": emergencyName, "emergencyContactNumber": emergencyNumber, "emergencyContactRelationship": emergencyRelationship
             
             if let urlString = self.profilePictureURL?.absoluteString {
                 
                 userDictionary["profilePicture"] = urlString
+                
             }
             
             guard let validUserID = user?.uid else {return}
-        
             
             // self.dbRef.child("users").child(validUserID).setValue(userDictionary)
             
-            self.dbRef.child("users").updateChildValues([validUserID : userDictionary])
-            
+            self.dbRef.child("doctors").updateChildValues([validUserID : userDictionary])
         })
     }
     
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
 

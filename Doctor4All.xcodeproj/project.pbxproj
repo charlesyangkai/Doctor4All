@@ -32,7 +32,7 @@
 		8ADD723B1E67CB6D00DCADB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */; };
 		8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD723C1E681CF900DCADB9 /* Doctor.swift */; };
 		8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */; };
-		A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AC1E66DAD40012270F /* LogInController.swift */; };
+		A111F1AD1E66DAD40012270F /* UserLogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1AC1E66DAD40012270F /* UserLogInController.swift */; };
 		A111F1B41E66E2B50012270F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A111F1B31E66E2B50012270F /* Home.storyboard */; };
 		A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1B51E66E2CB0012270F /* HomeViewController.swift */; };
 		A111F1B91E66E2FB0012270F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1B71E66E2FB0012270F /* TableViewCell.swift */; };
@@ -41,8 +41,11 @@
 		A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C01E66E45E0012270F /* MapViewController.swift */; };
 		A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111F1C21E66E4790012270F /* DescriptionViewController.swift */; };
 		A126D6991E6C64BA004CFFFF /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126D6981E6C64BA004CFFFF /* AuthController.swift */; };
+		A12BD1B01E76E0DF00267DC4 /* StructDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BD1AF1E76E0DF00267DC4 /* StructDoctor.swift */; };
+		A12BD1B41E76E1C500267DC4 /* DoctorImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BD1B31E76E1C500267DC4 /* DoctorImageRow.swift */; };
 		A13017081E702B6100FA7AA1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13017071E702B6100FA7AA1 /* SWRevealViewController.m */; };
 		A142A5521E6EBB3D0041EBAB /* SignUpFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */; };
+		A15603471E780C2A00A46882 /* DoctorLogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15603461E780C2A00A46882 /* DoctorLogInController.swift */; };
 		A161AEDE1E67D4530071931D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A161AEDC1E67D4530071931D /* LaunchScreen.storyboard */; };
 		A161AEE41E67DB050071931D /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161AEDF1E67DB050071931D /* ArcLayer.swift */; };
 		A161AEE51E67DB050071931D /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161AEE01E67DB050071931D /* HolderView.swift */; };
@@ -52,11 +55,11 @@
 		A161AEEC1E6824B90071931D /* LaunchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A161AEEB1E6824B90071931D /* LaunchyController.swift */; };
 		A161AEEE1E683A190071931D /* railway.gif in Resources */ = {isa = PBXBuildFile; fileRef = A161AEED1E683A190071931D /* railway.gif */; };
 		A161AEF11E6843680071931D /* WebViewContent.html in Resources */ = {isa = PBXBuildFile; fileRef = A161AEF01E6843680071931D /* WebViewContent.html */; };
-		A1E646BC1E71158700A006FE /* StructUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646BB1E71158700A006FE /* StructUser.swift */; };
-		A1E646C11E711B2200A006FE /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646BF1E711B2200A006FE /* UserInfoCell.swift */; };
-		A1E646C21E711B2200A006FE /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E646C01E711B2200A006FE /* UserInfoCell.xib */; };
-		A1E646C41E714D7200A006FE /* UserInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646C31E714D7200A006FE /* UserInfoRow.swift */; };
-		A1E646C81E72AAC100A006FE /* UserImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E646C61E72AAC100A006FE /* UserImageCell.xib */; };
+		A1E646C41E714D7200A006FE /* UserImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E646C31E714D7200A006FE /* UserImageRow.swift */; };
+		A1E646C81E72AAC100A006FE /* RegisterUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E646C61E72AAC100A006FE /* RegisterUserCell.xib */; };
+		A1F996EE1E7694B200A3B9C6 /* RegisterDoctorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F996EC1E7694B200A3B9C6 /* RegisterDoctorController.swift */; };
+		A1F996EF1E7694B200A3B9C6 /* RegisterDoctorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F996ED1E7694B200A3B9C6 /* RegisterDoctorCell.xib */; };
+		A1F996F31E76BBAB00A3B9C6 /* StructUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F996F21E76BBAB00A3B9C6 /* StructUser.swift */; };
 		CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +93,7 @@
 		8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8ADD723C1E681CF900DCADB9 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		8AE4EEE81E66F5F1004106C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A111F1AC1E66DAD40012270F /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		A111F1AC1E66DAD40012270F /* UserLogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogInController.swift; sourceTree = "<group>"; };
 		A111F1B31E66E2B50012270F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A111F1B51E66E2CB0012270F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A111F1B71E66E2FB0012270F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -99,9 +102,12 @@
 		A111F1C01E66E45E0012270F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A111F1C21E66E4790012270F /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		A126D6981E6C64BA004CFFFF /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		A12BD1AF1E76E0DF00267DC4 /* StructDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructDoctor.swift; sourceTree = "<group>"; };
+		A12BD1B31E76E1C500267DC4 /* DoctorImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorImageRow.swift; sourceTree = "<group>"; };
 		A13017061E702B6100FA7AA1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A13017071E702B6100FA7AA1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFormController.swift; sourceTree = "<group>"; };
+		A15603461E780C2A00A46882 /* DoctorLogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorLogInController.swift; sourceTree = "<group>"; };
 		A161AEDD1E67D4530071931D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A161AEDF1E67DB050071931D /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 		A161AEE01E67DB050071931D /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
@@ -111,11 +117,11 @@
 		A161AEEB1E6824B90071931D /* LaunchyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchyController.swift; sourceTree = "<group>"; };
 		A161AEED1E683A190071931D /* railway.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = railway.gif; sourceTree = "<group>"; };
 		A161AEF01E6843680071931D /* WebViewContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WebViewContent.html; sourceTree = "<group>"; };
-		A1E646BB1E71158700A006FE /* StructUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructUser.swift; sourceTree = "<group>"; };
-		A1E646BF1E711B2200A006FE /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
-		A1E646C01E711B2200A006FE /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
-		A1E646C31E714D7200A006FE /* UserInfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoRow.swift; sourceTree = "<group>"; };
-		A1E646C61E72AAC100A006FE /* UserImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserImageCell.xib; sourceTree = "<group>"; };
+		A1E646C31E714D7200A006FE /* UserImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageRow.swift; sourceTree = "<group>"; };
+		A1E646C61E72AAC100A006FE /* RegisterUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterUserCell.xib; sourceTree = "<group>"; };
+		A1F996EC1E7694B200A3B9C6 /* RegisterDoctorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDoctorController.swift; sourceTree = "<group>"; };
+		A1F996ED1E7694B200A3B9C6 /* RegisterDoctorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterDoctorCell.xib; sourceTree = "<group>"; };
+		A1F996F21E76BBAB00A3B9C6 /* StructUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructUser.swift; sourceTree = "<group>"; };
 		A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doctor4All.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14CB943437732104E78B14D /* Pods-Doctor4All.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor4All.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor4All/Pods-Doctor4All.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,14 +209,13 @@
 			children = (
 				A161AEEA1E67DB2E0071931D /* Loader View */,
 				8AD1C8BA1E66B31F00D34CCE /* Main.storyboard */,
-				A1E646BB1E71158700A006FE /* StructUser.swift */,
-				A1E646BF1E711B2200A006FE /* UserInfoCell.swift */,
-				A1E646C31E714D7200A006FE /* UserInfoRow.swift */,
-				A1E646C61E72AAC100A006FE /* UserImageCell.xib */,
-				A1E646C01E711B2200A006FE /* UserInfoCell.xib */,
+				A12BD1B61E76E41B00267DC4 /* Register User Image Row */,
+				A12BD1B51E76E3EC00267DC4 /* Register Doctor Image Row */,
 				A126D6981E6C64BA004CFFFF /* AuthController.swift */,
+				A1F996EC1E7694B200A3B9C6 /* RegisterDoctorController.swift */,
 				A142A5511E6EBB3D0041EBAB /* SignUpFormController.swift */,
-				A111F1AC1E66DAD40012270F /* LogInController.swift */,
+				A15603461E780C2A00A46882 /* DoctorLogInController.swift */,
+				A111F1AC1E66DAD40012270F /* UserLogInController.swift */,
 				A161AEF01E6843680071931D /* WebViewContent.html */,
 				A161AEEF1E683A1E0071931D /* Images */,
 			);
@@ -262,6 +267,26 @@
 				A111F1BE1E66E3FA0012270F /* Request.storyboard */,
 			);
 			name = Request;
+			sourceTree = "<group>";
+		};
+		A12BD1B51E76E3EC00267DC4 /* Register Doctor Image Row */ = {
+			isa = PBXGroup;
+			children = (
+				A12BD1AF1E76E0DF00267DC4 /* StructDoctor.swift */,
+				A12BD1B31E76E1C500267DC4 /* DoctorImageRow.swift */,
+				A1F996ED1E7694B200A3B9C6 /* RegisterDoctorCell.xib */,
+			);
+			name = "Register Doctor Image Row";
+			sourceTree = "<group>";
+		};
+		A12BD1B61E76E41B00267DC4 /* Register User Image Row */ = {
+			isa = PBXGroup;
+			children = (
+				A1F996F21E76BBAB00A3B9C6 /* StructUser.swift */,
+				A1E646C31E714D7200A006FE /* UserImageRow.swift */,
+				A1E646C61E72AAC100A006FE /* RegisterUserCell.xib */,
+			);
+			name = "Register User Image Row";
 			sourceTree = "<group>";
 		};
 		A161AEE91E67DB100071931D /* Layers */ = {
@@ -359,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A161AEEE1E683A190071931D /* railway.gif in Resources */,
+				A1F996EF1E7694B200A3B9C6 /* RegisterDoctorCell.xib in Resources */,
 				49C193171E6E935500D3B0F6 /* DoctorHome.storyboard in Resources */,
 				A111F1BF1E66E3FA0012270F /* Request.storyboard in Resources */,
 				A111F1BA1E66E2FB0012270F /* TableViewCell.xib in Resources */,
@@ -366,12 +392,11 @@
 				4936CC081E6FBE1E0001C2B1 /* TableViewCell2.xib in Resources */,
 				A111F1B41E66E2B50012270F /* Home.storyboard in Resources */,
 				8AD1C8BE1E66B31F00D34CCE /* Assets.xcassets in Resources */,
-				A1E646C21E711B2200A006FE /* UserInfoCell.xib in Resources */,
 				A161AEDE1E67D4530071931D /* LaunchScreen.storyboard in Resources */,
 				49750B341E756CC60061D374 /* TableViewCell3.xib in Resources */,
 				8AD1C8BC1E66B31F00D34CCE /* Main.storyboard in Resources */,
 				8AE4EEE91E66F5F2004106C3 /* GoogleService-Info.plist in Resources */,
-				A1E646C81E72AAC100A006FE /* UserImageCell.xib in Resources */,
+				A1E646C81E72AAC100A006FE /* RegisterUserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,9 +462,9 @@
 				4936CC071E6FBE1E0001C2B1 /* TableViewCell2.swift in Sources */,
 				A111F1B61E66E2CB0012270F /* HomeViewController.swift in Sources */,
 				A13017081E702B6100FA7AA1 /* SWRevealViewController.m in Sources */,
+				A15603471E780C2A00A46882 /* DoctorLogInController.swift in Sources */,
 				A161AEE71E67DB050071931D /* RectangleLayer.swift in Sources */,
 				A161AEE41E67DB050071931D /* ArcLayer.swift in Sources */,
-				A1E646C11E711B2200A006FE /* UserInfoCell.swift in Sources */,
 				A126D6991E6C64BA004CFFFF /* AuthController.swift in Sources */,
 				49750B331E756CC60061D374 /* TableViewCell3.swift in Sources */,
 				A142A5521E6EBB3D0041EBAB /* SignUpFormController.swift in Sources */,
@@ -448,15 +473,18 @@
 				8AA8FC711E6EC9AF00223778 /* Appointment.swift in Sources */,
 				A111F1B91E66E2FB0012270F /* TableViewCell.swift in Sources */,
 				A161AEE61E67DB050071931D /* OvalLayer.swift in Sources */,
+				A12BD1B01E76E0DF00267DC4 /* StructDoctor.swift in Sources */,
 				49C193151E6E932600D3B0F6 /* DoctorHomeViewController.swift in Sources */,
+				A111F1AD1E66DAD40012270F /* UserLogInController.swift in Sources */,
 				49750B2C1E7568CA0061D374 /* RequstsHistoryViewController.swift in Sources */,
-				A111F1AD1E66DAD40012270F /* LogInController.swift in Sources */,
 				495F589A1E69794100709A39 /* MenuViewController.swift in Sources */,
 				A111F1C31E66E4790012270F /* DescriptionViewController.swift in Sources */,
+				A12BD1B41E76E1C500267DC4 /* DoctorImageRow.swift in Sources */,
 				49C1931C1E6EAD9200D3B0F6 /* Menu2ViewController.swift in Sources */,
+				A1F996EE1E7694B200A3B9C6 /* RegisterDoctorController.swift in Sources */,
+				A1F996F31E76BBAB00A3B9C6 /* StructUser.swift in Sources */,
 				8ADD723D1E681CF900DCADB9 /* Doctor.swift in Sources */,
-				A1E646BC1E71158700A006FE /* StructUser.swift in Sources */,
-				A1E646C41E714D7200A006FE /* UserInfoRow.swift in Sources */,
+				A1E646C41E714D7200A006FE /* UserImageRow.swift in Sources */,
 				8AD1C8B71E66B31B00D34CCE /* AppDelegate.swift in Sources */,
 				A161AEE51E67DB050071931D /* HolderView.swift in Sources */,
 				A111F1C11E66E45E0012270F /* MapViewController.swift in Sources */,
