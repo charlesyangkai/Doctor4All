@@ -190,14 +190,14 @@ class AppointmentViewController: UIViewController {
         
         guard let currentUserID = User.current.userID else {return}
         
-        var userDictionary: [String: Any] = ["userID": currentUserID , "condition": conditionTextView , "home": isBox1Clicked, "clinic": isBox2Clicked, "timeDate": timeDateTextField, "acceptedBy": ""]
+        var userDictionary: [String: Any] = ["userID": currentUserID , "condition": conditionTextView.text , "home": isBox1Clicked, "clinic": isBox2Clicked, "timeDate": timeDateTextField.text, "acceptedBy": ""]
         
         
         let ref = self.dbRef.child("appointments").childByAutoId()
         
         userDictionary["appointmentID"] = ref.key
         
-        ref.updateChildValues(userDictionary)
+        ref.setValue(userDictionary)
         
         
     }

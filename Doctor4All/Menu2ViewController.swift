@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
@@ -17,8 +18,8 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuNameArray = ["Homepage","Requests History","Profile Settings"]
-        iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!]
+        menuNameArray = ["Homepage","Requests History","Profile Settings","Logout"]
+        iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!, UIImage(named: "profile-icon")!]
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,6 +29,27 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func handleLogout() {
+        do {
+            try FIRAuth.auth()?.signOut()
+        }catch let logoutError {
+            print(logoutError)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func logOut(){
+        let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            self.handleLogout()
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +70,7 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let cell:MenuCell = tableView.cellForRow(at: indexPath) as! MenuCell
         print(cell.menuLabel.text!)
+        
         if cell.menuLabel.text! == "Homepage"
         {
             print("Home Tapped")
@@ -61,8 +84,7 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
             return
         }
         
-        if cell.menuLabel.text! == "Requests History"
-        {
+        if cell.menuLabel.text! == "Requests History"{
             print("requests Tapped")
             
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "DoctorHome", bundle: nil)
@@ -72,28 +94,32 @@ class Menu2ViewController: UIViewController,UITableViewDelegate, UITableViewData
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             return
         }
-        if cell.menuLabel.text! == "Map"
-        {
-            print("Map Tapped")
-            //
-            //            let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
-            //            let controller = storyboard.instantiateViewController(withIdentifier: "MapViewController")
-            //                as? MapViewController
-            //
-        }
-        if cell.menuLabel.text! == "Profile Settings"
-        {
+        
+//        if cell.menuLabel.text! == "Map"{
+//            print("Map Tapped")
+//            //
+//            //            let storyboard = UIStoryboard(name: "Request", bundle: Bundle.main)
+//            //            let controller = storyboard.instantiateViewController(withIdentifier: "MapViewController")
+//            //                as? MapViewController
+//            //
+//        }
+       
+        if cell.menuLabel.text! == "Profile Settings"{
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "DoctorHome", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "EditDoctorVC") as! EditDoctorProfileViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             print("setting Tapped")
         }
-    }
-    
-    
-    
-    
-    
+        
+        if cell.menuLabel.text! == "Logout"{
+            
+            logOut()
+            print("Logout Tapped")
+        }
+        
+        
+
+}
 }
 

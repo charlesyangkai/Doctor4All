@@ -14,9 +14,9 @@ var currentUser: String?
 class LogInController: UIViewController {
     
     //Diffferentiate user and doctor
+    var dbRef: FIRDatabaseReference!
     
-    
-    
+     
     @IBOutlet weak var backGroundImageView: UINavigationItem!
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -35,6 +35,7 @@ class LogInController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dbRef = FIRDatabase.database().reference()
         
        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
@@ -69,10 +70,43 @@ class LogInController: UIViewController {
     }
     
     
+
+    func handleUser(user: FIRUser){
+        dbRef.child("users").observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(user.uid){
+                
+                print("user is a patient")
+                User.current.userID = user.uid
+                User.current.fetchUserInformationViaID()
+                print("user logged in")
+                self.loadUserHomePage()
+                
+            }
+        })
+        
+        
+        // FOR DOCTOR
+        dbRef.child("doctors").observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(user.uid){
+                
+                print("user is a doctor")
+                Doctor.current.doctorID = user.uid
+                Doctor.current.fetchDoctorInformationViaID()
+                print("doctor logged in")
+                self.loadDoctorHomePage()
+                
+            }
+        })
+    }
     
     func loadUserHomePage() {
-        let homePage = HomeViewController()
-        present(homePage, animated: true, completion: nil)
+        //let homePage = HomeViewController()
+        let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+            as? SWRevealViewController
+        present(controller!, animated: true, completion: nil)
         
     }
     
@@ -80,29 +114,5 @@ class LogInController: UIViewController {
         let homePage = DoctorHomeViewController()
         present(homePage, animated: true, completion: nil)
         
-    }
-
-
-    
-    
-    func handleUser(user: FIRUser){
-        
-        if SignUpFormController.usersList.contains(user.uid){
-        
-        User.current.userID = user.uid
-        User.current.fetchUserInformationViaID()
-        print("user logged in")
-        loadUserHomePage()
-        }
-        
-        
-        // DoctorList
-        if SignUpFormController.doctorsList.contains(user.uid){
-            
-            Doctor.current.doctorID = user.uid
-            Doctor.current.fetchDoctorInformationViaID()
-            print("doctor logged in")
-            loadDoctorHomePage()
-        }
     }
 }

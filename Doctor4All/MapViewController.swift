@@ -22,7 +22,8 @@ class MapViewController: UIViewController {
     var types: [String] = ["generalPractioners", "psychologists", "therapists"]
     var doctorID: [String] = []
     var dbRef: FIRDatabaseReference!
-    
+    var currentLocationCoordinate : CLLocationCoordinate2D?
+    var type: String?
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -42,6 +43,18 @@ class MapViewController: UIViewController {
         observeDoctorsID()
         //observeDoctors()
         //addressToCoordinatesConverter()
+        
+        //getCurrentLocation()
+    }
+   func getCurrentLocation(){
+        
+        if let location = self.locationManager.location?.coordinate{
+            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+            currentLocationCoordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(currentLocationCoordinate!, span)
+            mapView.setRegion(region, animated: true)
+            mapView.showsUserLocation = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,25 +103,32 @@ class MapViewController: UIViewController {
             return
         }
         
-        let type = types[index]
+        type = types[index]
         
         print("type is \(type)")
 
-        dbRef.child("types").child(type).observe(.value, with: { (snapshot) in
-            dump(snapshot)
+        functionOne()
+        
             
-            if let snapValues = snapshot.value as? [String: String] {
-                
-                for (_,value) in snapValues {
-                    self.doctorID.append(value)
-                }
-            }
-            
-            print(self.doctorID)
-            self.observeDoctors()
-            
-        })
+        
     }
+
+func functionOne(){
+    dbRef.child("types").child(type!).observe(.value, with: { (snapshot) in
+        dump(snapshot)
+        
+        if let snapValues = snapshot.value as? [String: String] {
+            
+            for (_,value) in snapValues {
+                self.doctorID.append(value)
+            }
+        }
+        
+        print(self.doctorID)
+        self.observeDoctors()
+        })
+
+}
     
         func observeDoctors(){
     
@@ -149,8 +169,8 @@ class MapViewController: UIViewController {
                 if error == nil,
                     let placemarks = placemarks {
                     if placemarks.count != 0 {
-                        for placemark in placemarks {
-                        //if let placemark = placemarks.first {
+                        //for placemark in placemarks {
+                        if let placemark = placemarks.first {
                             let annotation = MKPointAnnotation()
                             annotation.coordinate = (placemark.location?.coordinate)!
                             print(annotation.coordinate)
@@ -206,10 +226,11 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate{
         print(locations)
         
         // Span to current location
-        if let location = locations.first {
+        if let location = locations.last {
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
+            mapView.showsUserLocation = true
             locationManager.stopUpdatingLocation()
         }
     }

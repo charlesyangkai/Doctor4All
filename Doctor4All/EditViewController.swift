@@ -8,7 +8,9 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController,
+    UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
 
     @IBOutlet weak var userPassTF: UITextField!
     @IBOutlet weak var userEmailTF: UITextField!
@@ -27,29 +29,33 @@ class EditViewController: UIViewController {
         
     }
     
-    @IBAction func choseUserProfilePicBtn(_ sender: Any) {
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   
+    let picker = UIImagePickerController()
+    
+    @IBAction func choseProfilePicBtn(_ sender: UIButton) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        self.present(picker, animated: true, completion: nil)
         
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      //  EditViewController.title = "some title"
+       // self.title= "Edit Profile"
+        self.navigationItem.title = "Edit Profile"
     }
-    */
-
+    
+    //MARK: - Delegates
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let userProfilePic = info[UIImagePickerControllerOriginalImage] as! UIImage
+        // use the image
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

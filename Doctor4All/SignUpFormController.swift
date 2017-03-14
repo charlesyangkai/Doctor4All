@@ -29,8 +29,7 @@ class SignUpFormController: FormViewController {
         
     }
     // DoctorList
-    static var doctorsList: [String] = []
-    static var usersList: [String] = []
+  
     
     
     var dbRef: FIRDatabaseReference!
@@ -277,10 +276,12 @@ class SignUpFormController: FormViewController {
             }
             
             guard let validUserID = user?.uid else {return}
+        
             
             // self.dbRef.child("users").child(validUserID).setValue(userDictionary)
             
             self.dbRef.child("users").updateChildValues([validUserID : userDictionary])
+            
         })
     }
     
