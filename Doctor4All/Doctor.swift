@@ -26,7 +26,7 @@ class Doctor {
     var clinicName: String?
     
     
-    init(withDictionary dictionary: [String:Any]){
+    init(withDictionary dictionary: [String:Any]) {
         
         name = dictionary["name"] as? String
         type = dictionary["type"] as? String
@@ -40,15 +40,15 @@ class Doctor {
         email = dictionary["email"] as? String
         clinicName = dictionary["clinicName"] as? String
         
-        if let pictureURL = dictionary["picture"] as? String{
+        if let pictureURL = dictionary["picture"] as? String {
             picture = URL(string: pictureURL)
         }
         
-        if let certPictureURL = dictionary["certPicture"] as? String{
+        if let certPictureURL = dictionary["certPicture"] as? String {
             certPicture = URL(string: certPictureURL)
         }
         
-        if let icPictureURL = dictionary["icPicture"] as? String{
+        if let icPictureURL = dictionary["icPicture"] as? String {
             icPicture = URL(string: icPictureURL)
         }
         

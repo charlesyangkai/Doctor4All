@@ -1,5 +1,5 @@
 //
-//  UserInfoRow.swift
+//  UserImageRow.swift
 //  Doctor4All
 //
 //  Created by Kyle Gorter on 3/9/17.
@@ -11,7 +11,7 @@ import Eureka
 import ImageRow
 
 
-final class UserImageCell: PushSelectorCell<UIImage> {
+final class RowInfoCell: PushSelectorCell<UIImage> {
     
     @IBOutlet weak var selectedDisplayImage: UIImageView!
     
@@ -36,11 +36,11 @@ final class UserImageCell: PushSelectorCell<UIImage> {
  
 }
 
-final class UserImageRow : _ImageRow<UserImageCell>, RowType {
+final class UserImageRow : _ImageRow<RowInfoCell>, RowType {
     
     public required init(tag: String?) {
         super.init(tag: tag)
-        cellProvider = CellProvider<UserImageCell>(nibName: "UserImageCell")
+        cellProvider = CellProvider<RowInfoCell>(nibName: "RegisterUserCell")
     }
     
     override func customUpdateCell() {
@@ -55,11 +55,11 @@ final class UserImageRow : _ImageRow<UserImageCell>, RowType {
     }
 }
 
-final class UserInfoRow: Row<UserInfoCell>, RowType {
+final class RowInfoRow: Row<RowInfoCell>, RowType {
     
     required init(tag: String?) {
         super.init(tag: tag)
-        cellProvider = CellProvider<UserInfoCell>(nibName: "UserInfoCell")
+        cellProvider = CellProvider<RowInfoCell>(nibName: "RegisterUserCell")
     }
     
     
