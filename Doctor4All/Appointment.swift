@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class Appointment{
     
+    var appointmentID: String?
     var userID: String?
     var condition: String?
     var home: Bool?
@@ -20,6 +24,7 @@ class Appointment{
     
     init(withDictionary dictionary: [String: Any]){
         
+        appointmentID = dictionary["appointmentID"] as? String
         userID = dictionary["userID"] as? String
         condition = dictionary["condition"] as? String
         home = dictionary["home"] as? Bool
