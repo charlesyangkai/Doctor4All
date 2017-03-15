@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
-
+import FirebaseAuth
 class EventDetailsViewController: UIViewController {
 
     
@@ -33,19 +33,25 @@ class EventDetailsViewController: UIViewController {
     
     func acceptAppointment() {
         
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        //transfering to Doctor.AcceptedAppointments array in FIREBASE
+        let acceptedAppointment = DoctorHomeViewController.currentAppointments[indexPathRow!]
+        dbRef.child("doctors").child(userID!).child("acceptedAppointments").child(acceptedAppointment.appointmentID!).setValue(acceptedAppointment.toDict())
+        
         //removing from database
         dbRef.child("appointments").child(DoctorHomeViewController.currentAppointments[indexPathRow!].appointmentID!).removeValue { error in
             if error != nil {
-                print("error \(error)")
+                print("error \(error) CAN'T REMOVE APPOINTMENT")
             }
-            
             //removing from array
             DoctorHomeViewController.currentAppointments.remove(at: self.indexPathRow!)
             
+            
+            //push back to home page
+            self.navigationController?.popViewController(animated: true)
         }
     }
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -68,7 +68,7 @@ class DoctorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView2.register(nib, forCellReuseIdentifier: "cell")
         
         
-        
+        observeAppointments()
         
     }
     
@@ -134,7 +134,7 @@ class DoctorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
         
         dbRef.child("users").child(DoctorHomeViewController.currentAppointments[indexpathrow].userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            let name = value?["name"] as? String ?? ""
+            let name = value?["fullName"] as? String ?? ""
             self.displayThisName = name
             let address = value?["address"] as? String ?? ""
             self.displayThisAddress = address

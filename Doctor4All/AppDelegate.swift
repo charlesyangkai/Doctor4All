@@ -55,7 +55,7 @@ extension AppDelegate {
     
     func displayDoctorspage(){
         let storyboard = UIStoryboard(name: "DoctorHome", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController2")
         window?.rootViewController = controller
     }
     

@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var doctorTypeIcon: UIImageView!
     @IBOutlet weak var doctorTypeLabel: UILabel!
     override func awakeFromNib() {

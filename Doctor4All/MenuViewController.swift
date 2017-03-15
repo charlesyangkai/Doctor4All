@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
@@ -19,8 +20,8 @@ class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuNameArray = ["Home","Requests History","Profile Settings"]
-        iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!]
+        menuNameArray = ["Home","Requests History","Profile Settings","Logout"]
+        iconArray = [UIImage(named:"home")!, UIImage(named:"message")!, UIImage(named:"setting")!,UIImage(named: "profile-icon")!]
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -31,7 +32,26 @@ class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func handleLogout() {
+        do {
+            try FIRAuth.auth()?.signOut()
+        }catch let logoutError {
+            print(logoutError)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
+    
+    func logOut(){
+        let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            self.handleLogout()
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuNameArray.count
@@ -79,9 +99,15 @@ class MenuViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             print("setting Tapped")
         }
+        if cell.menuLabel.text! == "Logout"
+        {
+          logOut()
+          print("Logout Tapped")
+        }
+
     }
   
-   
+  
 
   
 

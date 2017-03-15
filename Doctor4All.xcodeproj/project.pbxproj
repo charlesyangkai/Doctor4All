@@ -21,6 +21,7 @@
 		49C193151E6E932600D3B0F6 /* DoctorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */; };
 		49C193171E6E935500D3B0F6 /* DoctorHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C193161E6E935500D3B0F6 /* DoctorHome.storyboard */; };
 		49C1931C1E6EAD9200D3B0F6 /* Menu2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C1931B1E6EAD9200D3B0F6 /* Menu2ViewController.swift */; };
+		49E7202F1E77CF1500BA30A6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E7202E1E77CF1500BA30A6 /* MessageUI.framework */; };
 		8A23CD531E67CB0E00F8C60C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A23CD521E67CB0E00F8C60C /* MapKit.framework */; };
 		8AA8FC6D1E6EAFBF00223778 /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8FC6C1E6EAFBF00223778 /* AppointmentViewController.swift */; };
 		8AA8FC6F1E6EC39B00223778 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8FC6E1E6EC39A00223778 /* User.swift */; };
@@ -79,6 +80,7 @@
 		49C193141E6E932600D3B0F6 /* DoctorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorHomeViewController.swift; sourceTree = "<group>"; };
 		49C193161E6E935500D3B0F6 /* DoctorHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DoctorHome.storyboard; sourceTree = "<group>"; };
 		49C1931B1E6EAD9200D3B0F6 /* Menu2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu2ViewController.swift; sourceTree = "<group>"; };
+		49E7202E1E77CF1500BA30A6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8A23CD521E67CB0E00F8C60C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8AA8FC6C1E6EAFBF00223778 /* AppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		8AA8FC6E1E6EC39A00223778 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E7202F1E77CF1500BA30A6 /* MessageUI.framework in Frameworks */,
 				8ADD723B1E67CB6D00DCADB9 /* CoreLocation.framework in Frameworks */,
 				8A23CD531E67CB0E00F8C60C /* MapKit.framework in Frameworks */,
 				CCD47C2E39520C84A8825D7C /* Pods_Doctor4All.framework in Frameworks */,
@@ -141,6 +144,7 @@
 		484A76D608F0C379E0F658CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49E7202E1E77CF1500BA30A6 /* MessageUI.framework */,
 				8ADD723A1E67CB6D00DCADB9 /* CoreLocation.framework */,
 				8A23CD521E67CB0E00F8C60C /* MapKit.framework */,
 				A760F1A6AD20A8285B577BC5 /* Pods_Doctor4All.framework */,
@@ -609,7 +613,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+=======
+>>>>>>> ddc69ecffefef227b4e6e3fcc6abb2b0bbe48a9d
 				DEVELOPMENT_TEAM = ZQ547JDPVM;
 				INFOPLIST_FILE = Doctor4All/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -628,7 +635,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+=======
+>>>>>>> ddc69ecffefef227b4e6e3fcc6abb2b0bbe48a9d
 				DEVELOPMENT_TEAM = ZQ547JDPVM;
 				INFOPLIST_FILE = Doctor4All/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

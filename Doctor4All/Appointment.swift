@@ -35,4 +35,39 @@ class Appointment{
     }
     
     
+    func toDict() -> [String : Any] {
+        var dictionary = [String : Any]()
+        
+        if let appointmentID = appointmentID {
+            dictionary["appointmentID"] = appointmentID
+        }
+        
+        if let userID = userID {
+        dictionary["userID"] = userID
+        }
+        
+        if let condition = condition {
+        dictionary["condition"] = condition
+        }
+        
+        
+        if let home = home {
+        dictionary["home"] = home
+        }
+        
+        if let clinic = clinic {
+        dictionary["clinic"] = clinic
+        }
+        
+        if let timeDate = timeDate {
+        dictionary["timeDate"] = timeDate
+        }
+        
+        if let acceptedBy = acceptedBy {
+        dictionary["acceptedBy"] = acceptedBy
+        }
+        
+        return dictionary
+    }
+    
 }
