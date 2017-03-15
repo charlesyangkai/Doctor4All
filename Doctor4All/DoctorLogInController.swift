@@ -5,6 +5,7 @@
 //  Created by Kyle Gorter on 3/1/17.
 //  Copyright © 2017 NextAcademy. All rights reserved.
 //
+
 /*---------------------------------------------------------------------------------------
  Edit: Here is another way to do this task if you are going to use this functionality in multiple UIViewControllers:
  
@@ -27,7 +28,14 @@
  }
  --------------------------------------------------------------------------------*/
 
-
+/*
+ Now in every UIViewController, all you have to do is call this function:
+ 
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ self.hideKeyboardWhenTappedAround()
+ }
+ */
 
 import UIKit
 import FirebaseAuth
@@ -58,10 +66,7 @@ class DoctorLogInController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    
-    
-    
-    
+
     func handleTap() {
         view.endEditing(true)
     }
@@ -112,9 +117,9 @@ class DoctorLogInController: UIViewController, UIGestureRecognizerDelegate {
                            completion: nil)
         }
         
-        
-        // Do any additional setup after loading the view.
     }
+        // Do any additional setup after loading the view.
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -11,17 +11,40 @@ import FirebaseDatabase
 
 class EditDoctorProfileViewController: UIViewController,
     UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
+UINavigationControllerDelegate, UITextFieldDelegate  {
+    
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
 
      var dbRef: FIRDatabaseReference!
     
     @IBOutlet weak var doctorPofilePicture: UIImageView!
-    @IBOutlet weak var doctorNameTF: UITextField!
-    @IBOutlet weak var doctorEmailTF: UITextField!
-    @IBOutlet weak var doctorPasswordTF: UITextField!
-    @IBOutlet weak var doctorPhonNumTF: UITextField!
-    @IBOutlet weak var doctorsAddressTF: UITextField!
+    @IBOutlet weak var doctorNameTF: UITextField! {
+        didSet{
+            doctorNameTF.delegate = self
+        }
+    }
+    @IBOutlet weak var doctorEmailTF: UITextField! {
+        didSet{
+            doctorEmailTF.delegate = self
+        }
+    }
+    @IBOutlet weak var doctorPasswordTF: UITextField! {
+        didSet{
+            doctorPasswordTF.delegate = self
+        }
+    }
+    @IBOutlet weak var doctorPhonNumTF: UITextField! {
+        didSet{
+            doctorPhonNumTF.delegate = self
+        }
+    }
+    @IBOutlet weak var doctorsAddressTF: UITextField! {
+        didSet{
+            doctorsAddressTF.delegate = self
+        }
+    }
 
+    public var activeTextField: UITextField?
         
         
     let picker = UIImagePickerController()
@@ -59,7 +82,63 @@ UINavigationControllerDelegate  {
         self.title = "Edit Doctor Profile"
         picker.delegate = self
         
+        self.hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        
+        
+    }
+
+    func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            guard
+                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+                let activeFrame = activeTextField?.frame else {
+                    animatePushKeyboard(userInfo, toHeight: 17.0)
+                    return
+            }
+            
+            
+            if activeFrame.maxY < endFrame.minY {
+                animatePushKeyboard(userInfo, toHeight: 17.0)
+                return
+            }
+            
+            
+            if endFrame.origin.y >= UIScreen.main.bounds.size.height {
+                animatePushKeyboard(userInfo, toHeight: 17.0)
+            } else {
+                animatePushKeyboard(userInfo, toHeight: endFrame.size.height)
+            }
+            
+        }
+        
+    }
+    
+    func animatePushKeyboard(_ userInfo:[AnyHashable:Any], toHeight: CGFloat){
+        
+        self.keyboardHeightLayoutConstraint?.constant = toHeight
+        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+        UIView.animate(withDuration: duration,
+                       delay: TimeInterval(0),
+                       options: animationCurve,
+                       animations: { self.view.layoutIfNeeded() },
+                       completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+
+    
     
     //MARK: - Delegates
     //MARK: - Delegates
@@ -67,6 +146,7 @@ UINavigationControllerDelegate  {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         print("finished picking image")
     }
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //handle media here i.e. do stuff with photo
         
@@ -90,7 +170,4 @@ UINavigationControllerDelegate  {
     @IBAction func cancelBtn(_ sender: Any) {
         performSegue(withIdentifier: "mySegue2", sender: nil)
     }
-
-
-
 }

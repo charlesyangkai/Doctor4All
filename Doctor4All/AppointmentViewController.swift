@@ -9,7 +9,11 @@
 import UIKit
 import FirebaseDatabase
 
-class AppointmentViewController: UIViewController {
+class AppointmentViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
+    public var activeTextField : UITextField?
     
     var dbRef: FIRDatabaseReference!
     
@@ -33,11 +37,19 @@ class AppointmentViewController: UIViewController {
     
     @IBOutlet weak var conditionTextView: UITextView!
     
-    @IBOutlet weak var timeDateTextField: UITextField!
+    @IBOutlet weak var timeDateTextField: UITextField! {
+        didSet{
+            timeDateTextField.delegate = self
+        }
+    }
     
     
     
-    @IBOutlet weak var datePickerText: UITextField!
+    @IBOutlet weak var datePickerText: UITextField! {
+        didSet{
+            datePickerText.delegate = self
+        }
+    }
     
     @IBOutlet weak var uncheckHome: UIButton!
     
@@ -138,8 +150,67 @@ class AppointmentViewController: UIViewController {
          dbRef = FIRDatabase.database().reference()
 
         createDatePicker()
+        
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        
+        
+    }
+    
+    
+    
+
+func keyboardNotification(notification: NSNotification) {
+    if let userInfo = notification.userInfo {
+        guard
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            let activeFrame = activeTextField?.frame else {
+                animatePushKeyboard(userInfo, toHeight: 10.0)
+                return
+        }
+        
+        
+        if activeFrame.maxY < endFrame.minY {
+            animatePushKeyboard(userInfo, toHeight: 10.0)
+            return
+        }
+        
+        
+        if endFrame.origin.y >= UIScreen.main.bounds.size.height {
+            animatePushKeyboard(userInfo, toHeight: 10.0)
+        } else {
+            animatePushKeyboard(userInfo, toHeight: endFrame.size.height)
+        }
+        
+    }
+    
+}
+
+func animatePushKeyboard(_ userInfo:[AnyHashable:Any], toHeight: CGFloat){
+    
+    self.keyboardHeightLayoutConstraint?.constant = toHeight
+    let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+    let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+    let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+    let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+    UIView.animate(withDuration: duration,
+                   delay: TimeInterval(0),
+                   options: animationCurve,
+                   animations: { self.view.layoutIfNeeded() },
+                   completion: nil)
+}
+
+func textFieldDidBeginEditing(_ textField: UITextField) {
+    activeTextField = textField
+}
+
+
     func createDatePicker(){
         
         
@@ -204,3 +275,16 @@ class AppointmentViewController: UIViewController {
 
 
 }
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

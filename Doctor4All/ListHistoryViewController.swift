@@ -11,8 +11,10 @@ import MessageUI
 import MapKit
 
 
-class ListHistoryViewController: UIViewController, MFMessageComposeViewControllerDelegate {
-
+class ListHistoryViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITextViewDelegate {
+    
+@IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
     //Variables
     let geoCoder = CLGeocoder()
     var theCoordinates: CLLocationCoordinate2D?
@@ -54,8 +56,21 @@ class ListHistoryViewController: UIViewController, MFMessageComposeViewControlle
 
     
     
-    @IBOutlet weak var conditionTV: UITextView!
-    @IBOutlet weak var addressTV: UITextView!
+    @IBOutlet weak var conditionTV: UITextView! {
+        didSet {
+            conditionTV.delegate = self
+            
+        }
+        
+    }
+    @IBOutlet weak var addressTV: UITextView! {
+        didSet {
+            addressTV.delegate = self
+            
+        }
+        
+    }
+    public var activeTextView: UITextView?
     
     @IBAction func showLocationBtn(_ sender: Any) {
         
@@ -93,7 +108,59 @@ class ListHistoryViewController: UIViewController, MFMessageComposeViewControlle
 
         // Do any additional setup after loading the view.
         self.title = "Requests History"
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            guard
+                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+                let activeFrame = activeTextView?.frame else {
+                    animatePushKeyboard(userInfo, toHeight: 10.0)
+                    return
+            }
+            
+            
+            if activeFrame.maxY < endFrame.minY {
+                animatePushKeyboard(userInfo, toHeight: 10.0)
+                return
+            }
+            
+            
+            if endFrame.origin.y >= UIScreen.main.bounds.size.height {
+                animatePushKeyboard(userInfo, toHeight: 10.0)
+            } else {
+                animatePushKeyboard(userInfo, toHeight: endFrame.size.height)
+            }
+            
+        }
+        
+    }
+    
+    func animatePushKeyboard(_ userInfo:[AnyHashable:Any], toHeight: CGFloat){
+        
+        self.keyboardHeightLayoutConstraint?.constant = toHeight
+        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+        UIView.animate(withDuration: duration,
+                       delay: TimeInterval(0),
+                       options: animationCurve,
+                       animations: { self.view.layoutIfNeeded() },
+                       completion: nil)
+    }
+
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

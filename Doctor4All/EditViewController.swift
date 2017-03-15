@@ -10,16 +10,39 @@ import UIKit
 
 class EditViewController: UIViewController,
     UIImagePickerControllerDelegate,
-UINavigationControllerDelegate{
+UINavigationControllerDelegate, UITextFieldDelegate{
+    
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
 
-    @IBOutlet weak var userPassTF: UITextField!
-    @IBOutlet weak var userEmailTF: UITextField!
-    @IBOutlet weak var userPhonNumTF: UITextField!
-    @IBOutlet weak var userNameTF: UITextField!
+    @IBOutlet weak var userPassTF: UITextField! {
+        didSet {
+            userPassTF.delegate = self
+        }
+    }
+    @IBOutlet weak var userEmailTF: UITextField! {
+        didSet {
+            userEmailTF.delegate = self
+        }
+    }
+    @IBOutlet weak var userPhonNumTF: UITextField! {
+        didSet {
+            userPhonNumTF.delegate = self
+        }
+    }
+    @IBOutlet weak var userNameTF: UITextField!{
+        didSet {
+            userNameTF.delegate = self
+        }
+    }
     @IBOutlet weak var userProfilePic: UIImageView!
     @IBOutlet weak var choseImage: UIButton!
-    @IBOutlet weak var userAddressTF: UITextField!
+    @IBOutlet weak var userAddressTF: UITextField!{
+        didSet {
+            userAddressTF.delegate = self
+        }
+    }
     
+    public var activeTextField : UITextField?
     
     @IBAction func cancelBtn(_ sender: UIButton) {
     performSegue(withIdentifier: "mySegue", sender: nil)
@@ -65,6 +88,56 @@ UINavigationControllerDelegate{
        // self.title= "Edit Profile"
         picker.delegate = self
         self.navigationItem.title = "Edit Profile"
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    
+        
+    }
+    
+    func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            guard
+                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+                let activeFrame = activeTextField?.frame else {
+                    animatePushKeyboard(userInfo, toHeight: 10.0)
+                    return
+            }
+            
+            
+            if activeFrame.maxY < endFrame.minY {
+                animatePushKeyboard(userInfo, toHeight: 10.0)
+                return
+            }
+            
+            
+            if endFrame.origin.y >= UIScreen.main.bounds.size.height {
+                animatePushKeyboard(userInfo, toHeight: 10.0)
+            } else {
+                animatePushKeyboard(userInfo, toHeight: endFrame.size.height)
+            }
+            
+        }
+        
+    }
+    
+    func animatePushKeyboard(_ userInfo:[AnyHashable:Any], toHeight: CGFloat){
+        
+        self.keyboardHeightLayoutConstraint?.constant = toHeight
+        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+        UIView.animate(withDuration: duration,
+                       delay: TimeInterval(0),
+                       options: animationCurve,
+                       animations: { self.view.layoutIfNeeded() },
+                       completion: nil)
     }
     
     //MARK: - Delegates
@@ -88,4 +161,12 @@ UINavigationControllerDelegate{
         dismiss(animated: true, completion: nil)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
 }
+
+
+    
+

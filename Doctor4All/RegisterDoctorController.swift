@@ -16,13 +16,9 @@ import Eureka
 
 class RegisterDoctorController: FormViewController {
     
-    
-    
     var dbRef: FIRDatabaseReference!
     
     var profilePictureURL: URL?
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

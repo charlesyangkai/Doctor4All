@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
 //        displayDoctorspage()
-        //displayRequest()
-        //displayDoctors()
-        //displayAppointment()
+//        displayRequest()
+//       displayDoctors()
+        displayAppointment()
         
         
         return true
@@ -71,7 +71,7 @@ extension AppDelegate {
         let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
 //        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNavigation")
        // as? UINavigationController
-        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController1")
         window?.rootViewController = controller
     }
     

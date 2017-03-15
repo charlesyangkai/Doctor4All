@@ -5,29 +5,37 @@
 //  Created by Kyle Gorter on 3/1/17.
 //  Copyright © 2017 NextAcademy. All rights reserved.
 //
+
 /*---------------------------------------------------------------------------------------
-Edit: Here is another way to do this task if you are going to use this functionality in multiple UIViewControllers:
+ Edit: Here is another way to do this task if you are going to use this functionality in multiple UIViewControllers:
+ 
+ // Put this piece of code anywhere you like
+ extension UIViewController {
+ func hideKeyboardWhenTappedAround() {
+ let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+ view.addGestureRecognizer(tap)
+ }
+ 
+ func dismissKeyboard() {
+ view.endEditing(true)
+ }
+ }
+ Now in every UIViewController, all you have to do is call this function:
+ 
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ self.hideKeyboardWhenTappedAround()
+ }
+ --------------------------------------------------------------------------------*/
 
-// Put this piece of code anywhere you like
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-Now in every UIViewController, all you have to do is call this function:
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    self.hideKeyboardWhenTappedAround()
-}
---------------------------------------------------------------------------------*/
-
-
+/*
+ Now in every UIViewController, all you have to do is call this function:
+ 
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ self.hideKeyboardWhenTappedAround()
+ }
+ */
 
 import UIKit
 import FirebaseAuth
@@ -112,9 +120,9 @@ class UserLogInController: UIViewController, UIGestureRecognizerDelegate {
                            completion: nil)
         }
 
-        
-        // Do any additional setup after loading the view.
     }
+        // Do any additional setup after loading the view.
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

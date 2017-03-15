@@ -52,7 +52,7 @@ class LaunchyController: UIViewController, HolderViewDelegate {
         label.textColor = UIColor.white
         label.font = UIFont(name: "HelveticaNeue-Thin", size: 41.0)
         label.textAlignment = NSTextAlignment.center
-        label.text = "Doctor Kush"
+        label.text = "Doctor4All"
         label.transform = label.transform.scaledBy(x: 0.25, y: 0.25)
         //    label.transform = CATransform3DMakeScale(label.transform, 0.25, 0.25)
         view.addSubview(label)
