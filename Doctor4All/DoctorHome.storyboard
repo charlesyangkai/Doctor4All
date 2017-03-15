@@ -12,7 +12,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="SCR-Rl-Mly">
             <objects>
-                <viewController storyboardIdentifier="SWRevealViewController" id="Qlb-o5-seC" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SWRevealViewController2" id="Qlb-o5-seC" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VNb-iu-r8V"/>
                         <viewControllerLayoutGuide type="bottom" id="zy8-DQ-pXv"/>

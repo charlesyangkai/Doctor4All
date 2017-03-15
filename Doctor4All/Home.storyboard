@@ -393,7 +393,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="TVw-Q0-NrX">
             <objects>
-                <viewController storyboardIdentifier="SWRevealViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdQ-kI-UbL" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SWRevealViewController1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdQ-kI-UbL" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="540-DN-kjL"/>
                         <viewControllerLayoutGuide type="bottom" id="hCH-9g-Kn4"/>
@@ -505,6 +505,6 @@
         <image name="menu" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yal-wV-K0P"/>
+        <segue reference="dGi-n4-1Yv"/>
     </inferredMetricsTieBreakers>
 </document>

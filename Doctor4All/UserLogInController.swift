@@ -142,15 +142,16 @@ class UserLogInController: UIViewController, UIGestureRecognizerDelegate {
             //Call self.loadChannelPage() here for customTabBarController
         })
         
-        loadHomePage()
-        
     }
     
     
     
     func loadHomePage() {
-        let homePage = HomeViewController()
-        present(homePage, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController1")
+            as? SWRevealViewController
+        //let homePage = HomeViewController()
+        present(controller!, animated: true, completion: nil)
         
     }
 
@@ -166,7 +167,7 @@ class UserLogInController: UIViewController, UIGestureRecognizerDelegate {
         
         User.current.userID = user.uid
         User.current.fetchUserInformationViaID()
-        
+        loadHomePage()
         print("user logged in")
     }
     

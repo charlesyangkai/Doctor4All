@@ -239,9 +239,11 @@ class RegisterDoctorController: FormViewController {
             let alert = UIAlertController(title: "Sign up complete!", message: "Proceed to log in.", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Awesome", style: .default, handler: { (UIAlertAction) in
-                let signUpComplete = self.storyboard?.instantiateViewController(withIdentifier: "LogInController") as? UserLogInController
+               // let signUpComplete = self.storyboard?.instantiateViewController(withIdentifier: "DoctorLogInController") as? DoctorLogInController
                 
-                self.navigationController?.pushViewController(signUpComplete!, animated: true)
+                //self.navigationController?.pushViewController(signUpComplete!, animated: true)
+                //self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             })
             
             alert.addAction(action)
