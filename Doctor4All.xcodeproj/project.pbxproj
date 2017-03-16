@@ -207,7 +207,6 @@
 		A111F1AE1E66DE6B0012270F /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A18CE68F1E7905E700C9EB69 /* Main.storyboard */,
 				A161AEEA1E67DB2E0071931D /* Loader View */,
 				A12BD1B61E76E41B00267DC4 /* Register User Image Row */,
 				A12BD1B51E76E3EC00267DC4 /* Register Doctor Image Row */,
@@ -217,6 +216,7 @@
 				A15603461E780C2A00A46882 /* DoctorLogInController.swift */,
 				A111F1AC1E66DAD40012270F /* UserLogInController.swift */,
 				A161AEF01E6843680071931D /* WebViewContent.html */,
+				A18CE68F1E7905E700C9EB69 /* Main.storyboard */,
 				A161AEEF1E683A1E0071931D /* Images */,
 			);
 			name = Authentication;

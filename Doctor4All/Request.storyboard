@@ -202,7 +202,6 @@
                         <outlet property="conditionTextView" destination="UaE-Lt-X4t" id="13S-ho-cpu"/>
                         <outlet property="confirmAppointmentButton" destination="YWg-5O-cOn" id="Lyu-xR-rpJ"/>
                         <outlet property="datePickerText" destination="3Ml-3t-JVl" id="9Cf-KD-l37"/>
-                        <outlet property="keyboardHeightLayoutConstraint" destination="Vie-Tj-CP6" id="NcW-Yp-2RQ"/>
                         <outlet property="timeDateTextField" destination="3Ml-3t-JVl" id="VaJ-4g-nn2"/>
                         <outlet property="uncheckClinic" destination="T6i-Le-CAn" id="AdI-eH-3Vg"/>
                         <outlet property="uncheckHome" destination="hiH-nn-aim" id="h8a-Kl-hq2"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        displayDoctorspage()
 //        displayRequest()
 //       displayDoctors()
-        displayAppointment()
+//        displayAppointment()
         
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

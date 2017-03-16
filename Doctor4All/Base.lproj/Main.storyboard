@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4A-Tv-fVS">
-                                <rect key="frame" x="88" y="552" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="552" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.29803921570000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="r8d-Ry-3fZ"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eu-lA-K7d">
-                                <rect key="frame" x="87" y="502" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="502" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.29803921570000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="sVe-Yb-Nrz"/>
@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N3c-n3-ajS">
-                                <rect key="frame" x="82" y="366" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="366" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="39e-Ll-KI3"/>
                                 </constraints>
@@ -116,7 +116,7 @@
                                 <state key="normal" title="Log In"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-ND-Szd">
-                                <rect key="frame" x="82" y="316" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="316" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="aeg-E8-BLS"/>
                                 </constraints>
@@ -161,7 +161,6 @@
                     <navigationItem key="navigationItem" id="cIP-RV-B9n"/>
                     <connections>
                         <outlet property="emailTextField" destination="OPT-ND-Szd" id="AFc-4X-ORg"/>
-                        <outlet property="keyboardHeightLayoutConstraint" destination="l8U-WX-vdx" id="iyo-Mv-OaO"/>
                         <outlet property="logInButton" destination="Nyb-1B-lxT" id="cYq-5u-dA1"/>
                         <outlet property="passwordTextField" destination="N3c-n3-ajS" id="End-kb-VmG"/>
                     </connections>
@@ -189,7 +188,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnl-Pt-eHS">
-                                <rect key="frame" x="83" y="407" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="407" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="hFs-bR-EVZ"/>
                                     <constraint firstAttribute="width" constant="210" id="lNc-ob-EdJ"/>
@@ -199,7 +198,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-JZ-4MM">
-                                <rect key="frame" x="83" y="457" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="457" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="okw-LX-vVe"/>
                                 </constraints>
@@ -208,7 +207,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-6q-6xs">
-                                <rect key="frame" x="83" y="507" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="507" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="akP-c6-FZV"/>
                                     <constraint firstAttribute="width" constant="210" id="x95-Ua-kcn"/>
@@ -218,7 +217,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qac-2J-Xbz">
-                                <rect key="frame" x="128" y="567" width="120" height="30"/>
+                                <rect key="frame" x="127.5" y="567" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="w33-iJ-grZ"/>
                                 </constraints>
@@ -328,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-gG-Y3V">
-                                <rect key="frame" x="82" y="366" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="366" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="MBX-E3-611"/>
                                 </constraints>
@@ -344,7 +343,7 @@
                                 <state key="normal" title="Log In"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQk-4B-0Q1">
-                                <rect key="frame" x="82" y="316" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="316" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="Dg7-k4-5v2"/>
                                 </constraints>
@@ -389,7 +388,6 @@
                     <navigationItem key="navigationItem" id="nOc-qg-NQF"/>
                     <connections>
                         <outlet property="emailTextField" destination="aQk-4B-0Q1" id="P2y-Qv-Wtq"/>
-                        <outlet property="keyboardHeightLayoutConstraint" destination="Ck5-DF-zJz" id="q2o-7d-XlI"/>
                         <outlet property="logInButton" destination="xK7-Wn-dck" id="cSf-d0-muq"/>
                         <outlet property="passwordTextField" destination="QAG-gG-Y3V" id="jRS-kd-AfV"/>
                     </connections>

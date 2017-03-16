@@ -41,6 +41,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - ImageRow (1.0.0):
     - Eureka (~> 2.0.0-beta.1)
+  - IQKeyboardManagerSwift (4.0.8)
 
 DEPENDENCIES:
   - Eureka (~> 2.0)
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - ImageRow (~> 1.0)
+  - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
@@ -62,7 +64,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   ImageRow: 1e37db26f61a0c4ad3bc9a3a803c32d968782857
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
 
-PODFILE CHECKSUM: 3a912a72705ccad6f8dafd2921a9f265d9dd4696
+PODFILE CHECKSUM: 5b2648f0ec38ed5f04f2f60c253c0d4974f358c7
 
 COCOAPODS: 1.2.0

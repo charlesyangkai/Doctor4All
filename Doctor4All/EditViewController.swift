@@ -12,7 +12,7 @@ class EditViewController: UIViewController,
     UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate{
     
-    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+//    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
 
     @IBOutlet weak var userPassTF: UITextField! {
         didSet {
@@ -42,7 +42,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         }
     }
     
-    public var activeTextField : UITextField?
+//    public var activeTextField : UITextField?
     
     @IBAction func cancelBtn(_ sender: UIButton) {
     performSegue(withIdentifier: "mySegue", sender: nil)
@@ -91,54 +91,54 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         
         self.hideKeyboardWhenTappedAround()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
     
         
-    }
+//    }
     
-    func keyboardNotification(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            guard
-                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-                let activeFrame = activeTextField?.frame else {
-                    animatePushKeyboard(userInfo, toHeight: 10.0)
-                    return
-            }
-            
-            
-            if activeFrame.maxY < endFrame.minY {
-                animatePushKeyboard(userInfo, toHeight: 10.0)
-                return
-            }
-            
-            
-            if endFrame.origin.y >= UIScreen.main.bounds.size.height {
-                animatePushKeyboard(userInfo, toHeight: 10.0)
-            } else {
-                animatePushKeyboard(userInfo, toHeight: endFrame.size.height)
-            }
-            
-        }
-        
-    }
+////    func keyboardNotification(notification: NSNotification) {
+//        if let userInfo = notification.userInfo {
+//            guard
+//                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+//                let activeFrame = activeTextField?.frame else {
+//                    animatePushKeyboard(userInfo, toHeight: 10.0)
+//                    return
+//            }
+//            
+//            
+//            if activeFrame.maxY < endFrame.minY {
+//                animatePushKeyboard(userInfo, toHeight: 10.0)
+//                return
+//            }
+//            
+//            
+//            if endFrame.origin.y >= UIScreen.main.bounds.size.height {
+//                animatePushKeyboard(userInfo, toHeight: 10.0)
+//            } else {
+//                animatePushKeyboard(userInfo, toHeight: endFrame.size.height)
+//            }
+//            
+////        }
     
-    func animatePushKeyboard(_ userInfo:[AnyHashable:Any], toHeight: CGFloat){
-        
-        self.keyboardHeightLayoutConstraint?.constant = toHeight
-        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-        UIView.animate(withDuration: duration,
-                       delay: TimeInterval(0),
-                       options: animationCurve,
-                       animations: { self.view.layoutIfNeeded() },
-                       completion: nil)
-    }
+//    }
+    
+//    func animatePushKeyboard(_ userInfo:[AnyHashable:Any], toHeight: CGFloat){
+//        
+//        self.keyboardHeightLayoutConstraint?.constant = toHeight
+//        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+//        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+//        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+//        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+//        UIView.animate(withDuration: duration,
+//                       delay: TimeInterval(0),
+//                       options: animationCurve,
+//                       animations: { self.view.layoutIfNeeded() },
+//                       completion: nil)
+//    }
     
     //MARK: - Delegates
    
@@ -161,9 +161,9 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         dismiss(animated: true, completion: nil)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeTextField = textField
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        activeTextField = textField
+//    }
     
 }
 

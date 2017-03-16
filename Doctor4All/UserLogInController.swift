@@ -44,7 +44,7 @@ import FirebaseDatabase
 //var currentUser: String?
 class UserLogInController: UIViewController, UIGestureRecognizerDelegate {
     // Initialize this for Keyboard cover textfield fix
-    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+//    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     
     @IBAction func userSignUp(_ sender: UIButton) {
@@ -89,38 +89,38 @@ class UserLogInController: UIViewController, UIGestureRecognizerDelegate {
        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         // Keyboard covers textfield fix
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
     
-    func keyboardNotification(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.keyboardHeightLayoutConstraint?.constant = 70.0
-            } else {
-                
-                if let height = endFrame?.size.height {
-                    self.keyboardHeightLayoutConstraint?.constant = height - 140
-                }else {
-                    self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 70.0
-                }
-            }
-            UIView.animate(withDuration: duration,
-                           delay: TimeInterval(0),
-                           options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
-                           completion: nil)
-        }
-
-    }
+//    func keyboardNotification(notification: NSNotification) {
+//        if let userInfo = notification.userInfo {
+//            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+//            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+//            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+//            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+//            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+//            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+//                self.keyboardHeightLayoutConstraint?.constant = 70.0
+//            } else {
+//                
+//                if let height = endFrame?.size.height {
+//                    self.keyboardHeightLayoutConstraint?.constant = height - 140
+//                }else {
+//                    self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 70.0
+//                }
+//            }
+//            UIView.animate(withDuration: duration,
+//                           delay: TimeInterval(0),
+//                           options: animationCurve,
+//                           animations: { self.view.layoutIfNeeded() },
+//                           completion: nil)
+//        }
+//
+//    }
         // Do any additional setup after loading the view.
     
 
